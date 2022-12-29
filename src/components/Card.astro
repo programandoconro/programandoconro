@@ -3,25 +3,26 @@ export interface Props {
 	title: string;
 	body: string;
 	href: string;
+	logo?: string;
 }
 
-const { href, title, body } = Astro.props as Props;
+const { href, body, logo, title } = Astro.props as Props;
 ---
 
 <li class="link-card">
 	<a href={href} target="_blank">
 		<h2>
-			{title}
+		{logo ? <img src={logo} alt={logo} width="100" /> : null }
 			<span>&rarr;</span>
 		</h2>
 		<p>
-			{body}
+			<strong>{title}</strong>: {body}
 		</p>
 	</a>
 </li>
 <style>
 	:root {
-		--link-gradient: linear-gradient(45deg, #4f39fa, #da62c4 30%, var(--color-border) 60%);
+		--link-gradient: linear-gradient(45deg, #442cf7, black 30%, var(--color-border) 60%);
 	}
 
 	.link-card {
@@ -47,8 +48,11 @@ const { href, title, body } = Astro.props as Props;
 	}
 
 	h2 {
+		display: flex;
+		align-items:center;
 		margin: 0;
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		text-align: center;
 	}
 
 	p {
@@ -66,7 +70,7 @@ const { href, title, body } = Astro.props as Props;
 	}
 
 	.link-card:is(:hover, :focus-within) h2 {
-		color: #4f39fa;
+		color: black;
 	}
 
 	.link-card:is(:hover, :focus-within) h2 span {
