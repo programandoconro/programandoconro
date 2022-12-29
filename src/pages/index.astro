@@ -6,7 +6,7 @@ import Card from '../components/Card.astro';
 <Layout title="Programandoconro">
 
 	<main>
-		<h1>Bienvenido a <span class="text-gradient">Programandoconro</span></h1>
+		<h1><i>Bienvenidos a</i> <span class="text-gradient">Programandoconro</span></h1>
 		<p class="instructions">
 			Mis perfiles
 			
@@ -15,31 +15,31 @@ import Card from '../components/Card.astro';
 			<Card
 				href="https://github.com/programandoconro/"
 				title="Github"
-				body="Me especializo en React y React Native. Mis lenguajes favoritos son Typescript y Kotlin. Soy fan de GNU/Linux"
+				body="Me especializo en React y React Native. Mis lenguajes favoritos son Typescript y Kotlin. Soy fan de GNU/Linux."
 				logo="/logos/github.png"
 			/>
 			<Card
 				href="https://stackoverflow.com/users/5948056/programandoconro/"
 				title="Stackoverflow"
-				body="Soy muy curioso y me gusta enseñar. Siempre pregunto y respondo preguntas sobre programación, especialmente sobre Python y React"
+				body="Soy curioso y me gusta enseñar. Siempre pregunto y respondo preguntas sobre programación, especialmente sobre Python y React."
 				logo="/logos/stackoverflow.png"
 			/>
 			<Card
 				href="https://www.hackerrank.com/programandoconro"
 				title="HackerRank"
-				body="Si no estoy en trabajando en algún proyecto, me gusta mantenerme en forma resolviendo problemas de programación. De esta manera aprendí Java"
+				body="Si no estoy en trabajando en algún proyecto, me gusta mantenerme en forma resolviendo problemas de programación. De esta manera aprendí Java."
 				logo="/logos/hackerrank.png"
 			/>
 			<Card
 				href="https://programandoconro.wordpress.com"
 				title="Wordpress"
-				body="Me inicié a la programación creando un blog sobre Ciencia de Datos y Machine Learning"
+				body="Me inicié a la programación creando un blog sobre Ciencia de Datos y Machine Learning."
 				logo="/logos/wordpress.png"
 			/>
 			<Card
 				href="https://www.flickr.com/photos/rodlupanow/"
 				title="Flickr"
-				body="Mis hobbies son viajar, nadar, subir montañas, el ajedrez, la guitarra y la programación y la fotografía 📷"
+				body="Mis hobbies son viajar, nadar, subir montañas, el ajedrez, la guitarra y la fotografía 📷"
 				logo="/logos/flickr.png"
 			/>
 		</ul>
@@ -48,12 +48,21 @@ import Card from '../components/Card.astro';
 
 <style>
 	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, black);
+		--astro-gradient: linear-gradient(0deg, #1e00ff, rgb(0, 8, 59));
+	}
+	i{
+		font: italic 1.2em "Fira Sans", serif;
 	}
 
 	h1 {
 		margin: 2rem 0;
 		font-size: 30px;
+	}
+	@media screen and (min-width: 500px){
+		h1{
+		font-size: 40px;
+
+		}
 	}
 	@media screen and (min-width: 600px){
 		h1{
@@ -98,17 +107,10 @@ import Card from '../components/Card.astro';
 	.instructions {
 		line-height: 1.6;
 		margin: 1rem 0;
-		background: #080238;
+		background: #2c1d9b;
 		padding: 1rem;
 		border-radius: 0.4rem;
 		color: var(--color-bg);
-	}
-
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
 	}
 
 	.link-card-grid {
