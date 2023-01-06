@@ -1,122 +1,100 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Profile from "../components/Profile.astro";
 ---
 
 <Layout title="Programandoconro">
+  <main>
+    <h1>
+      <i>Bienvenidos a</i>
+      <span class="text-gradient">Programandoconro</span>
+    </h1>
 
-	<main>
-		<h1><i>Bienvenidos a</i> <span class="text-gradient">Programandoconro</span></h1>
-		<p class="instructions">
-			Mis perfiles
-			
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://github.com/programandoconro/"
-				title="Github"
-				body="Me especializo en React y React Native. Mis lenguajes favoritos son Typescript y Kotlin. Soy fan de GNU/Linux."
-				logo="/logos/github.png"
-			/>
-			<Card
-				href="https://stackoverflow.com/users/5948056/programandoconro/"
-				title="Stackoverflow"
-				body="Soy curioso y me gusta enseñar. Siempre pregunto y respondo preguntas sobre programación, especialmente sobre Python y React."
-				logo="/logos/stackoverflow.png"
-			/>
-			<Card
-				href="https://www.hackerrank.com/programandoconro"
-				title="HackerRank"
-				body="Si no estoy en trabajando en algún proyecto, me gusta mantenerme en forma resolviendo problemas de programación. De esta manera aprendí Java."
-				logo="/logos/hackerrank.png"
-			/>
-			<Card
-				href="https://programandoconro.wordpress.com"
-				title="Wordpress"
-				body="Me inicié a la programación creando un blog sobre Ciencia de Datos y Machine Learning."
-				logo="/logos/wordpress.png"
-			/>
-			<Card
-				href="https://www.flickr.com/photos/rodlupanow/"
-				title="Flickr"
-				body="Mis hobbies son viajar, nadar, subir montañas, el ajedrez, la guitarra y la fotografía 📷"
-				logo="/logos/flickr.png"
-			/>
-		</ul>
-	</main>
+    <div class="profile-photo-container">
+      <img
+        class="profile-photo"
+        src="/logos/programandoconro.jpg"
+        alt="profile"
+        width="50%"
+      />
+    </div>
+    <section>
+      <p class="profile-banner">Mis perfiles</p>
+      <Profile />
+    </section>
+  </main>
 </Layout>
 
 <style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #1e00ff, rgb(0, 8, 59));
-	}
-	i{
-		font: italic 1.2em "Fira Sans", serif;
-	}
+  :root {
+    --astro-gradient: linear-gradient(0deg, #1e00ff, rgb(0, 8, 59));
+  }
+  i {
+    font: italic 1.2em "Fira Sans", serif;
+  }
 
-	h1 {
-		margin: 2rem 0;
-		font-size: 30px;
-	}
-	@media screen and (min-width: 500px){
-		h1{
-		font-size: 40px;
+  h1 {
+    margin: 2rem 0;
+    font-size: 30px;
+  }
+  @media screen and (min-width: 500px) {
+    h1 {
+      font-size: 40px;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    h1 {
+      font-size: 50px;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    h1 {
+      font-size: 60px;
+    }
+  }
 
-		}
-	}
-	@media screen and (min-width: 600px){
-		h1{
-		font-size: 50px;
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: 60ch;
+  }
 
-		}
-	}
-	@media screen and (min-width: 800px){
-		h1{
-		font-size: 60px;
+  .profile-photo {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .profile-photo-container {
+    display: flex;
+    justify-content: center;
+  }
 
-		}
-	}
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--astro-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+    animation: pulse 4s ease-in-out infinite;
+  }
 
-	main {
-		margin: auto;
-		padding: 1em;
-		max-width: 60ch;
-	}
+  @keyframes pulse {
+    0%,
+    100% {
+      background-position-y: 0%;
+    }
+    50% {
+      background-position-y: 80%;
+    }
+  }
 
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--astro-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-		0%,
-		100% {
-			background-position-y: 0%;
-		}
-		50% {
-			background-position-y: 80%;
-		}
-	}
-
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #2c1d9b;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
-
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  .profile-banner {
+    line-height: 1.6;
+    margin: 1rem 0;
+    background: #2c1d9b;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
 </style>
