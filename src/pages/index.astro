@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Profile from "../components/Profile.astro";
+import Avatar from "../components/Avatar.astro";
 ---
 
 <Layout title="Programandoconro">
@@ -10,14 +11,8 @@ import Profile from "../components/Profile.astro";
       <span class="text-gradient">Programandoconro</span>
     </h1>
 
-    <div class="profile-photo-container">
-      <img
-        class="profile-photo"
-        src="/logos/programandoconro.jpg"
-        alt="profile"
-        width="50%"
-      />
-    </div>
+    <Avatar />
+
     <section>
       <p class="profile-banner">Mis perfiles</p>
       <Profile />
@@ -57,15 +52,6 @@ import Profile from "../components/Profile.astro";
     margin: auto;
     padding: 1em;
     max-width: 60ch;
-  }
-
-  .profile-photo {
-    border-radius: 50%;
-    overflow: hidden;
-  }
-  .profile-photo-container {
-    display: flex;
-    justify-content: center;
   }
 
   .text-gradient {
