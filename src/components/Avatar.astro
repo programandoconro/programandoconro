@@ -10,11 +10,12 @@
     width: 200px;
     border-radius: 50%;
     transition: 0.3s ease-out;
-    transform: translateY(10px);
+    transform: translateY(-1.8rem);
+    position: absolute;
   }
   span {
-    height: 200px;
-    width: 200px;
+    height: 220px;
+    width: 220px;
     background-color: black;
     border-radius: 50%;
     overflow: hidden;
@@ -22,11 +23,12 @@
     margin-right: auto;
   }
   div {
+    height: 200px;
     display: grid;
+    padding: 1rem;
   }
   span:hover img {
-    transform: translateY(-30px);
-    transition: 0.3s ease-in;
-    position: absolute;
-  
+    transform: translateY(-40px) scale(1.1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 </style>
