@@ -12,8 +12,8 @@ import Avatar from "../components/Avatar.astro";
 
     <Avatar />
     <i
-      >Bienvenidos a programandoconro, un sitio para compartir mi ruta de
-      aprendizaje en el mundo de la programación.</i
+      >Bienvenidos a <strong>programandoconro</strong>, un sitio donde comparto
+      mi aprendizaje, intereses y experiencias en el mundo de la programación.</i
     >
 
     <section>
@@ -25,7 +25,7 @@ import Avatar from "../components/Avatar.astro";
 
 <style>
   :root {
-    --astro-gradient: linear-gradient(0deg, #1e00ff, rgb(0, 8, 59));
+    --astro-gradient: linear-gradient(0deg, #1e00ff, rgb(255, 255, 255));
     --astro-black: rgb(36, 36, 36);
   }
   i {
@@ -36,6 +36,7 @@ import Avatar from "../components/Avatar.astro";
   h1 {
     margin: 2rem 0;
     font-size: 30px;
+    color: var(--color-bg);
   }
   @media screen and (min-width: 500px) {
     h1 {
