@@ -40,7 +40,11 @@ import Timeline from "../components/Timeline.astro";
 
 <style>
   :root {
-    --astro-gradient: linear-gradient(0deg, #1e00ff, rgb(255, 255, 255));
+    --astro-gradient: linear-gradient(
+      0deg,
+      var(--astro-blue),
+      rgb(255, 255, 255)
+    );
   }
   i {
     font: italic 1.2em "Fira Sans", serif;
