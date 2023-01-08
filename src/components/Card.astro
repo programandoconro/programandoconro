@@ -1,21 +1,21 @@
 ---
 export interface Props {
-  title: string;
   body: string;
   href: string;
-  logo?: string;
+  logo: string;
+  logoWidth?: number;
 }
 
-const { href, body, logo, title } = Astro.props as Props;
+const { href, body, logo, logoWidth = 100 } = Astro.props as Props;
 ---
 
 <li class="link-card">
   <a href={href} target="_blank">
     <h2>
-      {logo ? <img src={logo} alt={logo} width="100" /> : null}
+      {logo ? <img src={logo} alt={logo} width={logoWidth} /> : null}
     </h2>
     <p>
-      <strong>{title}</strong>: {body}
+      {body}
     </p>
   </a>
 </li>

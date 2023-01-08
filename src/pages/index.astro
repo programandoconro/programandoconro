@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Profile from "../components/Profile.astro";
 import Avatar from "../components/Avatar.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Programandoconro">
@@ -19,6 +20,15 @@ import Avatar from "../components/Avatar.astro";
     <section>
       <p class="banner">Mis perfiles</p>
       <Profile />
+    </section>
+    <section>
+      <p class="banner">Un trabajo reciente para un amigo</p>
+      <Card
+        href="https://nakagawaactivity.com/"
+        body="Un sitio para reservar aventuras en bicicleta, kayak y escalada."
+        logo="./logos/nakagawaactivity_logo.png"
+        logoWidth={300}
+      />
     </section>
   </main>
 </Layout>
