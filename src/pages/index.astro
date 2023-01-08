@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Profile from "../components/Profile.astro";
 import Avatar from "../components/Avatar.astro";
 import Card from "../components/Card.astro";
+import Timeline from "../components/Timeline.astro";
 ---
 
 <Layout title="Programandoconro">
@@ -14,7 +15,7 @@ import Card from "../components/Card.astro";
     <Avatar />
     <i
       >Bienvenidos a <strong>programandoconro</strong>, un sitio donde comparto
-      mi aprendizaje, intereses y experiencias en el mundo de la programación.</i
+      mi aprendizaje, intereses y experiencia en el mundo de la programación.</i
     >
 
     <section>
@@ -22,13 +23,17 @@ import Card from "../components/Card.astro";
       <Profile />
     </section>
     <section>
-      <p class="banner">Un trabajo reciente para un amigo</p>
+      <p class="banner">Un proyecto reciente</p>
       <Card
         href="https://nakagawaactivity.com/"
         body="Un sitio para reservar aventuras en bicicleta, kayak y escalada."
         logo="./logos/nakagawaactivity_logo.png"
         logoWidth={300}
       />
+    </section>
+    <section>
+      <p class="banner">Timeline</p>
+      <Timeline />
     </section>
   </main>
 </Layout>
