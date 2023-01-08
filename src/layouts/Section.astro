@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<section>
+  <p class="banner">{title}</p>
+  <slot />
+</section>
+
+<style>
+  .banner {
+    line-height: 1.6;
+    margin: 1rem 0;
+    background: #2c1d9b;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--astro-white);
+  }
+</style>

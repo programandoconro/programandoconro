@@ -4,6 +4,7 @@ import Profile from "../components/Profile.astro";
 import Avatar from "../components/Avatar.astro";
 import Card from "../components/Card.astro";
 import Timeline from "../components/Timeline.astro";
+import Section from "../layouts/Section.astro";
 ---
 
 <Layout title="Programandoconro">
@@ -18,23 +19,21 @@ import Timeline from "../components/Timeline.astro";
       mi aprendizaje, intereses y experiencia en el mundo de la programación.</i
     >
 
-    <section>
-      <p class="banner">Mis perfiles</p>
+    <Section title="Timeline">
+      <Timeline />
+    </Section>
+    <Section title="Mis Perfiles">
       <Profile />
-    </section>
-    <section>
-      <p class="banner">Un proyecto reciente</p>
+    </Section>
+
+    <Section title="Proyecto reciente">
       <Card
         href="https://nakagawaactivity.com/"
         body="Un sitio para reservar aventuras en bicicleta, kayak y escalada."
         logo="./logos/nakagawaactivity_logo.png"
         logoWidth={300}
       />
-    </section>
-    <section>
-      <p class="banner">Timeline</p>
-      <Timeline />
-    </section>
+    </Section>
   </main>
 </Layout>
 
@@ -97,14 +96,5 @@ import Timeline from "../components/Timeline.astro";
     50% {
       background-position-y: 80%;
     }
-  }
-
-  .banner {
-    line-height: 1.6;
-    margin: 1rem 0;
-    background: #2c1d9b;
-    padding: 1rem;
-    border-radius: 0.4rem;
-    color: var(--astro-white);
   }
 </style>
