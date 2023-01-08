@@ -26,17 +26,16 @@ import Avatar from "../components/Avatar.astro";
 <style>
   :root {
     --astro-gradient: linear-gradient(0deg, #1e00ff, rgb(255, 255, 255));
-    --astro-black: rgb(36, 36, 36);
   }
   i {
     font: italic 1.2em "Fira Sans", serif;
-    color: var(--color-bg);
+    color: var(--astro-white);
   }
 
   h1 {
     margin: 2rem 0;
     font-size: 30px;
-    color: var(--color-bg);
+    text-align: center;
   }
   @media screen and (min-width: 500px) {
     h1 {
@@ -87,6 +86,6 @@ import Avatar from "../components/Avatar.astro";
     background: #2c1d9b;
     padding: 1rem;
     border-radius: 0.4rem;
-    color: var(--color-bg);
+    color: var(--astro-white);
   }
 </style>
