@@ -15,17 +15,19 @@ import Section from "../layouts/Section.astro";
 
     <Avatar />
     <i
-      >Bienvenidos a <strong>programandoconro</strong>, un sitio donde comparto
-      mi aprendizaje, intereses y experiencia en el mundo de la programación.</i
+      >Mi nombre es Rodrigo Díaz Lupanow, bienvenidos a <strong
+        >programandoconro</strong
+      >, un sitio donde comparto mi aprendizaje, intereses y experiencia en el
+      mundo de la programación.</i
     >
 
-    <Section title="Timeline">
-      <Timeline />
-    </Section>
     <Section title="Mis Perfiles">
       <Profile />
     </Section>
 
+    <Section title="Timeline">
+      <Timeline />
+    </Section>
     <Section title="Proyecto reciente">
       <Card
         href="https://nakagawaactivity.com/"
@@ -34,6 +36,7 @@ import Section from "../layouts/Section.astro";
         logoWidth={300}
       />
     </Section>
+    <footer>© Programandoconro 2023</footer>
   </main>
 </Layout>
 
@@ -47,6 +50,11 @@ import Section from "../layouts/Section.astro";
   }
   i {
     font: italic 1.2em "Fira Sans", serif;
+    color: var(--astro-white);
+  }
+  footer {
+    padding-top: 20px;
+    text-align: center;
     color: var(--astro-white);
   }
 

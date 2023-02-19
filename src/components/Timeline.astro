@@ -1,51 +1,17 @@
 <ul class="timeline">
-  <!-- Item 1 -->
+  <!-- Item 5 -->
   <li>
     <div class="direction-r">
       <div class="flag-wrapper">
-        <span class="flag">Rakuten</span>
-        <span class="time-wrapper"
-          ><span class="time">2023 - actualmente</span>
-        </span>
+        <span class="flag">Universidad de Carabobo</span>
+        <span class="time-wrapper"><span class="time">2013</span></span>
       </div>
       <div class="desc">
-        Frontend Developer en la mayor plataforma de ventas online de Japón.
-        Desarrollador de nuevas funcionalidades. Testeo y mantenimiento de
-        código fuente. Mejoro mi CSS, HTML y SEO. Avanzo con Typescript y Redux.
+        Biólogo. En la asignatura de Ecología de Poblaciones conocí mi primer
+        lenguage de programación, me enamoré al instante.
       </div>
     </div>
   </li>
-
-  <!-- Item 2 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <span class="flag">Lateral Thinking</span>
-        <span class="time-wrapper"><span class="time">2020-2023</span></span>
-      </div>
-      <div class="desc">
-        Contribuyo en diversos proyectos React. Creador de dispostivo para
-        contar personas. Implemento nuevas features GPS para una App Android.
-        Aprendo Typescript, Kotlin y Java.
-      </div>
-    </div>
-  </li>
-  <!-- Item 3 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <span class="flag">Freelancer</span>
-        <span class="time-wrapper"><span class="time">2019 - 2020</span></span>
-      </div>
-      <div class="desc">
-        Comienza mi camino en el aprendizaje de React y React Native. Tutor y
-        Desarrollador de aplicaciones con R(shiny). Contribuyo en la mejora de
-        la UI en App React Native relacionada con el trasporte. Aprendo Go y
-        JavaScript.
-      </div>
-    </div>
-  </li>
-
   <!-- Item 4 -->
   <li>
     <div class="direction-l">
@@ -61,18 +27,49 @@
     </div>
   </li>
 
-  <!-- Item 5 -->
+  <!-- Item 3 -->
   <li>
     <div class="direction-r">
       <div class="flag-wrapper">
-        <span class="flag">Universidad de Carabobo</span>
+        <span class="flag">Freelancer</span>
+        <span class="time-wrapper"><span class="time">2019 - 2020</span></span>
+      </div>
+      <div class="desc">
+        Comienza mi camino en el aprendizaje de React y React Native. Tutor y
+        Desarrollador de aplicaciones con R(shiny). Contribuyo en la mejora de
+        la UI en App React Native relacionada con el trasporte. Aprendo Go y
+        JavaScript.
+      </div>
+    </div>
+  </li>
+  <!-- Item 2 -->
+  <li>
+    <div class="direction-l">
+      <div class="flag-wrapper">
+        <span class="flag">Lateral Thinking</span>
+        <span class="time-wrapper"><span class="time">2020-2023</span></span>
+      </div>
+      <div class="desc">
+        Contribuyo en diversos proyectos React. Creador de dispostivo para
+        contar personas. Implemento nuevas features GPS para una App Android.
+        Aprendo Typescript, Kotlin y Java.
+      </div>
+    </div>
+  </li>
+
+  <!-- Item 1 -->
+  <li>
+    <div class="direction-r blinker">
+      <div class="flag-wrapper">
+        <span class="flag">Rakuten</span>
         <span class="time-wrapper"
-          ><span class="time">graduado 2013</span>
+          ><span class="time">2023 - actualmente</span>
         </span>
       </div>
       <div class="desc">
-        Biólogo. En la asignatura de Ecología de Poblaciones conocí mi primer
-        lenguage de programación, me enamoré al instante.
+        Frontend Developer en la mayor plataforma de ventas online de Japón.
+        Desarrollador de nuevas funcionalidades. Testeo y mantenimiento de
+        código fuente. Mejoro mi CSS, HTML y SEO. Avanzo con Typescript y Redux.
       </div>
     </div>
   </li>
@@ -218,6 +215,9 @@
     border-radius: 10px;
     border: 4px solid var(--astro-blue);
     z-index: 10;
+  }
+  .blinker .flag:before {
+    animation: blinker 2s infinite;
   }
 
   .direction-r .flag:before {
@@ -388,6 +388,17 @@
     .direction-l .desc,
     .direction-r .desc {
       margin: 1em 4em 0 4em;
+    }
+  }
+  @keyframes blinker {
+    from {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
     }
   }
 </style>
