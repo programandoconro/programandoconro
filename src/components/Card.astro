@@ -9,7 +9,7 @@ export interface Props {
 const { href, body, logo, logoWidth = 100 } = Astro.props as Props;
 ---
 
-<li class="link-card">
+<li role="link" class="link-card">
   <a href={href} target="_blank">
     <h2>
       {logo ? <img src={logo} alt={logo} width={logoWidth} /> : null}
