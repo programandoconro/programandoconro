@@ -22,6 +22,28 @@
     margin-right: auto;
     background-color: black;
   }
+  img {
+    animation: 1s ease-out 0.5s slideIn, 1s ease-out 1.5s slideOut;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: none;
+    }
+    to {
+      transform: translateY(-40px) scale(1.1);
+      transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+  @keyframes slideOut {
+    from {
+      transform: translateY(-40px) scale(1.1);
+      transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    to {
+      transform: translateY(-1.8rem);
+    }
+  }
   div {
     display: grid;
   }
