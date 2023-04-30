@@ -15,9 +15,8 @@ import Section from "../layouts/Section.astro";
 
     <Avatar />
     <i
-      >Hola, mi nombre es Rodrigo Díaz, bienvenidos a <strong
-        >programandoconro</strong
-      >, un sitio donde comparto mi aprendizaje, intereses y experiencias en el
+      >Hola, mi nombre es Ro, bienvenidos a <strong>programandoconro</strong>,
+      un sitio donde comparto mi aprendizaje, intereses y experiencias en el
       mundo de la programación.</i
     >
 
@@ -28,11 +27,25 @@ import Section from "../layouts/Section.astro";
     <Section title="Timeline">
       <Timeline />
     </Section>
-    <Section title="Proyecto reciente">
+    <Section title="Proyecto freelance reciente">
       <Card
         href="https://nakagawaactivity.com/"
         body="Un sitio para reservar aventuras en bicicleta, kayak y escalada."
         logo="./logos/nakagawaactivity_logo.png"
+        logoWidth={300}
+      />
+    </Section>
+    <Section title="Proyectos mascota recientes">
+      <Card
+        href="https://correctmyjapanese.vercel.app/"
+        body="Un dashboard que emula la funcionalidad de corregir lenguages de HelloTalk. Con login de Google."
+        logo="./logos/kanjiholic.png"
+        logoWidth={300}
+      />
+      <Card
+        href="https://rusty-chess.vercel.app/"
+        body="Un tablero de Ajedrez desarrollado en mi tiempo libre para aprender Rust, WebAssembly y para practicar tecnologías Web."
+        logo="./logos/rusty-chess.jpg"
         logoWidth={300}
       />
     </Section>
