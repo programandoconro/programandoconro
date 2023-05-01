@@ -1,13 +1,14 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
+  id?: string;
 }
 
-const { title } = Astro.props as Props;
+const { title, id } = Astro.props as Props;
 ---
 
 <section>
-  <p class="banner">{title}</p>
+  <p class="banner" id={id}>{title}</p>
   <slot />
 </section>
 

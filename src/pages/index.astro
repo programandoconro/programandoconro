@@ -9,18 +9,15 @@ import Section from "../layouts/Section.astro";
 
 <Layout title="Programandoconro">
   <main>
+    <button id="language"> Español</button>
     <h1>
       <span class="text-gradient">Programandoconro</span>
     </h1>
 
     <Avatar />
-    <i
-      >Hola, mi nombre es Ro, bienvenidos a <strong>programandoconro</strong>,
-      un sitio donde comparto mi aprendizaje, intereses y experiencias en el
-      mundo de la programación.</i
-    >
+    <section id="intro"></section>
 
-    <Section title="Mis Perfiles">
+    <Section id="profile-title">
       <Profile />
     </Section>
 
@@ -53,6 +50,8 @@ import Section from "../layouts/Section.astro";
   </main>
 </Layout>
 
+<script src="../scripts/setContent.js"></script>
+
 <style>
   :root {
     --astro-gradient: linear-gradient(
@@ -61,8 +60,8 @@ import Section from "../layouts/Section.astro";
       rgb(255, 255, 255)
     );
   }
-  i {
-    font: italic 1.2em "Fira Sans", serif;
+  section {
+    font: 1.2em "Fira Sans", serif;
     color: var(--astro-white);
   }
   footer {

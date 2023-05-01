@@ -1,0 +1,109 @@
+{
+  "title": {
+    "spanish": ["Mis perfiles"],
+    "english": ["My profiles"],
+    "japanese": ["私のプロファイル"]
+  },
+  "github": {
+    "spanish": [
+      "Soy fan del open-source y experimento",
+      "con muchos lenguajes de programación y",
+      "frameworks.",
+      "Me especializo en React con Typescript."
+    ],
+    "english": [
+      "I am a open-source fan. I love to experiment",
+      "with many programming languages and frameworks.",
+      "I specialize in React and Typescript."
+    ],
+    "japanese": [
+      "私はオープンソースが好きです。",
+      "色々なプログラミング言語やフレームワークを通して経験することが好きです。",
+      "ReactやTypescriptを専門としています。"
+    ]
+  },
+  "stackoverflow": {
+    "spanish": [
+      "Tengo mucha curiosidad por aprender y me gusta enseñar.",
+      "Siempre pregunto y respondo dudas sobre programación."
+    ],
+    "english": [
+      "I am very curious to learn and I like to teach.",
+      "I always ask and answer questions about programming"
+    ],
+    "japanese": [
+      "学び興味があって、教えることが好きです。",
+      "いつもプログラミングについて質問をして、答えることもします。"
+    ]
+  },
+  "hackerrank": {
+    "spanish": [
+      "Si no estoy trabajando en algún proyecto,",
+      "me gusta mantenerme en forma resolviendo problemas",
+      "de programación. De esta manera aprendí Java."
+    ],
+    "english": [
+      "If I am not working in any project,",
+      "I like to keep in shape by solving programming problems",
+      "In this way I learned Java."
+    ],
+    "japanese": [
+      "プロジェクトをしていない場合、",
+      "技術を維持するために、プログラミング問題を解決します。",
+      "この方法でJavaを学びました。"
+    ]
+  },
+  "wordpress": {
+    "spanish": [
+      "Me adentré en la programación creando un blog sobre Ciencia de Datos",
+      "y Machine Learning. Utilizaba R y Python para hacer Apps",
+      "relacionadas al aprendizaje automatizado."
+    ],
+    "english": [
+      "I started programming by creating a Data Science and Machine Learning blog.",
+      "I used to code in R and Python in order  to create Apps",
+      "related to Machine Learning"
+    ],
+    "japanese": [
+      "データサイエンスやAIのブログを想像して、プログラミングを始めました。",
+      "以前はAIについてアプリを作成するために、RやPythonのコードも使いました。"
+    ]
+  },
+  "linkedin": {
+    "spanish": [
+      "Comencé como Data Scientist en 2015.",
+      "Luego fui Desarrollador Freelancer en 2019,",
+      "hasta obtener un puesto de Software Engineer en 2020.",
+      "Actualmente soy Frontend Developer en Rakuten."
+    ],
+    "english": [
+      "I started as a Data Scientist in 2015.",
+      "After that, I was a freelancer developer in 2019,",
+      "until I started a role as a Software Engineer in 2020. ",
+      "Currently, I am a Frontend Developer in Rakuten."
+    ],
+    "japanese": [
+      "2015からデータサイエンティストとして働き始めました。",
+      "その後、2019年までフリーランサー開発者として働きました。",
+      "2020年ソフトウェアエンジニアの仕事に就職しました。",
+      "現在、フロントエンド開発者として働いています。"
+    ]
+  },
+  "flickr": {
+    "spanish": [
+      "Mis hobbies son viajar, nadar, jugar football",
+      "subir montañas. Adoro el ajedrez, la guitarra y la fotografía 📷.",
+      "Aunque ultimamente paso el tiempo con la programación y estudiando japonés. 笑."
+    ],
+    "english": [
+      "My hobbies are traveling, swimming, playing soccer,",
+      "trecking. I love chess, playing guitar and taking photos.",
+      "But recently I use my free time to practice programming and study Japanese."
+    ],
+    "japanese": [
+      "私の趣味は旅行、泳ぎ、サッカーするやトレッキングです。",
+      "チェース、ギターや写真が大好きです",
+      "しかし、最近プログラミングを練習して、日本語を勉強しています。"
+    ]
+  }
+}

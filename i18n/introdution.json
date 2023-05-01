@@ -1,0 +1,19 @@
+{
+  "english": [
+    "Hello, my name is Ro.",
+    "Welcome to programandoconro,",
+    "a site where I share my learning",
+    "interests, and experiences in the programming world."
+  ],
+  "spanish": [
+    "Hola, mi nombre es Ro",
+    "bienvenidos a programandoconro,",
+    "un sitio donde comparto mi aprendizaje,",
+    "intereses y experiencias en el mundo de la programación."
+  ],
+  "japanese": [
+    "こんにちは、私はロです。",
+    "programandoconro にいらっしゃいませ、",
+    "プログラミングの世界で学びや経験をシェアしている所です。"
+  ]
+}
