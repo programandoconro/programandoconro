@@ -1,0 +1,97 @@
+{
+  "uc": {
+    "spanish": [
+      "Graduado de Biólogo en la Universidad de Carabobo,",
+      "Venezuela. En la clase de Ecología de Poblaciones conocí",
+      "mi primer lenguage de programación, me enamoré al instante."
+    ],
+    "english": [
+      "Graduated Biologist from Carabobo's University, Venezuela.",
+      "I knew my first programming language during Ecology of Populations classes,",
+      "I instantly fell in love."
+    ],
+    "japanese": [
+      "ベネズエラのCarabobo大学に生物学で卒業しました。",
+      "人口生態に私の最初のプログラミング言語を学習しました、",
+      "一瞬で恋に落ちた。"
+    ]
+  },
+  "ivic": {
+    "spanish": [
+      "Instituto Venezolano de Investigaciones.",
+      "Desarrollo de aplicaciones científicas para el análisis de datos",
+      "y predicciones con aprendizaje automatizado.",
+      "Aprendo R, Python y Machine Learning."
+    ],
+    "english": [
+      "Institute of Scientific investigations.",
+      "Scientific Apps development for data analysis and machine learning predictions.",
+      "I learnt R, Python and basic Machine Learning."
+    ],
+    "japanese": [
+      "科学研究所。",
+      "データ分析やAI予測のため科学アプリ開発。",
+      "R、Pythonや基本AIを学びました。"
+    ]
+  },
+  "freelancer": {
+    "spanish": [
+      "Comienza mi camino en el aprendizaje de React y React Native.",
+      "Tutor y Desarrollador de aplicaciones con R(shiny).",
+      "Contribuyo en la mejora de la UI en App React Native",
+      "relacionada con el trasporte. Aprendo Go y JavaScript."
+    ],
+    "english": [
+      "I started my learning about React and React Native.",
+      "Tutoring and App development with R(shiny).",
+      "I contributed to a React Native App UI improvement",
+      "related to transportation. I studied Go and JavaScript."
+    ],
+    "japanese": [
+      "ReactやReactNativeの学びを始めました。",
+      "個別指導やR（Shiny)でアプリの開発。",
+      "交通機関について、ReactNativeアプリのUIに貢献しました。",
+      "GoやJavaScriptを勉強しました。"
+    ]
+  },
+  "lateral": {
+    "spanish": [
+      "Contribuyo en diversos proyectos React.",
+      "Creador de dispostivo para contar personas.",
+      "Implemento nuevas features GPS para una App Android.",
+      "Aprendo Typescript, Kotlin y Java."
+    ],
+    "english": [
+      "I contributed to many React projects.",
+      "Creator of a people counter device.",
+      "New GPS features implementations for an Android App.",
+      "I learnt Typescript, Kotlin and Java."
+    ],
+    "japanese": [
+      "様々なReactプロジェクトの貢献。",
+      "人数カウンターデバイスの作成。",
+      "Androidパプリ位置情報機能の実装",
+      "Typescript、KotlinやJavaを学びました。"
+    ]
+  },
+  "rakuten": {
+    "spanish": [
+      "Frontend Developer en la mayor plataforma de ventas online de Japón.",
+      "Desarrollador de nuevas funcionalidades.",
+      "Testeo y mantenimiento de código fuente.",
+      "Mejoro mi CSS, HTML y SEO. Avanzo con Typescript y Redux."
+    ],
+    "english": [
+      "Frontend Developer in Japan's biggest shopping online platform.",
+      "New functionalities development.",
+      "Source code testing and refactoring.",
+      "I improve my CSS, HTML and SEO. I advance in Typescript and Redux."
+    ],
+    "japanese": [
+      "日本の一番オンラインショッピングアプリのフロントエンド開発者。",
+      "新しい機能の開発。",
+      "ソースコードのテースティングやリファクタリング。 ",
+      "CSS、HTMLやSEOの向上。TypescriptやReduxのマスター。"
+    ]
+  }
+}
