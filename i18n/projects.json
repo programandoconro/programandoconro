@@ -1,0 +1,51 @@
+{
+  "freelance": {
+    "title": {
+      "spanish": ["Proyecto freelance reciente"],
+      "english": ["Recent freelance project"],
+      "japanese": ["最近のフリーランサープロジェクト"]
+    },
+    "nakagawaactivity": {
+      "spanish": [
+        "Un sitio web para reservar aventuras en bicicleta, kayak y escalada."
+      ],
+      "english": [
+        "A website to make reservations for bicycle, kayac and climbing adventures."
+      ],
+      "japanese": [
+        "自転車、カヤックやクライミングのアドベンチャーを登録するためにウェブサイト。"
+      ]
+    }
+  },
+  "pet": {
+    "title": {
+      "spanish": ["Proyectos mascota recientes"],
+      "english": ["Recent pet projects"],
+      "japanese": ["最近のペットプロジェクト"]
+    },
+    "kanjiholics": {
+      "spanish": [
+        "Un dashboard que emula la funcionalidad de corregir",
+        "lenguages de HelloTalk. Con login de Google."
+      ],
+      "english": [
+        "A dashboard to emulate HelloTalk correction functionality.",
+        "With Google authentication."
+      ],
+      "japanese": ["HelloTalkの修正機能の真似ダッシュボード。", "Googleの認証"]
+    },
+    "rustyChess": {
+      "spanish": [
+        "Un tablero de ajedrez desarrollado en mi tiempo libre",
+        "para aprender Rust, WebAssembly y para practicar tecnologías web."
+      ],
+      "english": [
+        "A chessboard developed in my free time to learn Rust,",
+        "WebAssembly, and to practice web technologies."
+      ],
+      "japanese": [
+        "私の自分な時間でRust、WebAssemblyやWeb技術を練習ために開発したチェースボード。"
+      ]
+    }
+  }
+}
