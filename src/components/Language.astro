@@ -27,10 +27,11 @@
 <style>
   .switch-toggle {
     float: right;
-    background: #242729;
+    background: rgb(42, 42, 42);
     display: inline-flex;
     right: 10px;
     position: absolute;
+    border-radius: 50px;
   }
   .switch-toggle input {
     position: absolute;
@@ -43,41 +44,34 @@
     cursor: pointer;
   }
   .switch-toggle input:checked + label {
-    //background: var(--astro-gradient);
-    transition: 0.5s ease;
-    opacity: 0.8;
+    background: var(--astro-gradient);
+    transition: 1s ease;
+    opacity: 0.5;
   }
   .spanish::after,
   .english::after,
   .japanese::after {
     opacity: 0;
   }
-  .spanish:hover::after,
-  .english:hover::after,
-  .japanese:hover::after {
-    transition: opacity 1s ease;
-    opacity: 1;
-  }
-  .spanish:not(:hover)::after {
-    transition: opacity 1s ease;
-  }
-  .japanese:not(:hover)::after {
-    transition: content 1s ease;
-  }
-  .english:not(:hover)::after {
-    transition: opacity 1s ease;
-  }
   .spanish:hover,
   .english:hover,
   .japanese:hover {
     background-color: grey;
-    transition: 1s ease;
+    transition: opacity 0.75s ease;
     opacity: 1;
+  }
+  .spanish {
+    border-radius: 50px 2px 2px 50px;
+  }
+  .japanese {
+    border-radius: 2px 50px 50px 2px;
+  }
+  .english {
+    border-radius: 2px;
   }
   .spanish,
   .english,
   .japanese {
-    border-radius: 2px;
     color: #fff;
     opacity: 0.25;
   }
@@ -87,5 +81,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
+  }
+  @media only screen and (max-width: 600px) {
+    label {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    label {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    label {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    label {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    label {
+      width: 42px;
+      height: 42px;
+    }
   }
 </style>
