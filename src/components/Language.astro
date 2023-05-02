@@ -1,81 +1,74 @@
-    <div class="switch-toggle" id="switch-toggle" role="switch" >
+<div class="switch-toggle" id="switch-toggle" role="switch">
+  <input id="spanish" name="state-d" type="radio" />
+  <label for="spanish" class="spanish" onclick=""
+    ><img src="../public/logos/spain.png" height="30px" width="40px" />
+  </label>
 
-      <input id="spanish" class="spanish"  name="state-d" type="radio" />
-      <label for="spanish" class="spanish" onclick="">🇪🇸</label>
-    
-      <input id="english" name="state-d" type="radio"/>
-      <label for="english" class="english" onclick="">🇺🇸</label>
+  <input id="english" name="state-d" type="radio" />
+  <label for="english" class="english" onclick="">
+    <img src="../public/logos/usa.png" height="30px" width="30px" />
+  </label>
 
-    
-      <input id="japanese"  name="state-d" type="radio" />
-      <label for="japanese" class="japanese" onclick="">🇯🇵</label>
-    
-    </div>
-    <style>
-        .switch-toggle {
-            float: left;
-            background: #242729;
-            display: inline-flex;
-        }
-        .switch-toggle input {
-            position: absolute;
-            opacity: 0;
-        }
-        .switch-toggle input + label {
-            padding: 7px;
-            float:left;
-            color: #fff;
-            cursor: pointer;
-        }
-        .switch-toggle input:checked + label {
-            background: green;
-            transition: 0.5s ease;
-        }
-        .spanish::after, .english::after, .japanese::after{
-            opacity: 0;
-
-        }
-        .spanish:hover::after, .english:hover::after, .japanese:hover::after{
-            transition: opacity 1s ease;
-            opacity: 1;
-
-        }
-        .spanish:hover::after{
-            content: ' Español';
-
-        }
-        .spanish:not(:hover)::after{
-            transition: opacity 1s ease;
-
-
-        }
-        .japanese:not(:hover)::after{
-            transition: content 1s ease;
-
-
-        }
-        .english:not(:hover)::after{
-            transition: opacity 1s ease;
-
-
-        }
-        .english:hover::after{
-            content: ' English';
-
-        }
-        .japanese:hover::after{
-            content: ' 日本語';
-
-        }
-        .spanish:hover, .english:hover, .japanese:hover{
-            background-color: grey;
-            transition: 1s ease;
-
-        }
-        .spanish, .english, .japanese {
-            border-radius: 2px;
-            color: #fff;
-        }
-
-
-    </style>
+  <input id="japanese" name="state-d" type="radio" />
+  <label for="japanese" class="japanese" onclick="">
+    <img src="../public/logos/japan.png" height="30px" width="40px" />
+  </label>
+</div>
+<style>
+  .switch-toggle {
+    float: right;
+    background: #242729;
+    display: inline-flex;
+    right: 0;
+    position: absolute;
+  }
+  .switch-toggle input {
+    position: absolute;
+    opacity: 0;
+  }
+  .switch-toggle input + label {
+    padding: 7px;
+    float: left;
+    color: #fff;
+    cursor: pointer;
+  }
+  .switch-toggle input:checked + label {
+    //background: var(--astro-gradient);
+    transition: 0.5s ease;
+    opacity: 0.8;
+  }
+  .spanish::after,
+  .english::after,
+  .japanese::after {
+    opacity: 0;
+  }
+  .spanish:hover::after,
+  .english:hover::after,
+  .japanese:hover::after {
+    transition: opacity 1s ease;
+    opacity: 1;
+  }
+  .spanish:not(:hover)::after {
+    transition: opacity 1s ease;
+  }
+  .japanese:not(:hover)::after {
+    transition: content 1s ease;
+  }
+  .english:not(:hover)::after {
+    transition: opacity 1s ease;
+  }
+  .spanish:hover,
+  .english:hover,
+  .japanese:hover {
+    background-color: grey;
+    transition: 1s ease;
+    opacity: 1;
+  }
+  .spanish,
+  .english,
+  .japanese {
+    border-radius: 2px;
+    color: #fff;
+    opacity: 0.25;
+  }
+</style>

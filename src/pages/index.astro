@@ -5,7 +5,7 @@ import Avatar from "../components/Avatar.astro";
 import Card from "../components/Card.astro";
 import Timeline from "../components/Timeline.astro";
 import Section from "../layouts/Section.astro";
-import Language from "../components/Language.astro"
+import Language from "../components/Language.astro";
 ---
 
 <Layout title="Programandoconro">
@@ -52,7 +52,7 @@ import Language from "../components/Language.astro"
     <footer>© Programandoconro 2023</footer>
   </main>
 </Layout>
-<script src="../scripts/setContent.js" />
+<script src="../scripts/setContent.js"></script>
 
 <style>
   :root {
@@ -108,8 +108,8 @@ import Language from "../components/Language.astro"
     background-position-y: 100%;
     border-radius: 0.4rem;
     animation: pulse 4s ease-in-out infinite;
+    user-select: none;
   }
-
 
   @keyframes pulse {
     0%,
