@@ -1,17 +1,27 @@
 <div class="switch-toggle" id="switch-toggle" role="switch">
   <input id="spanish" name="state-d" type="radio" />
   <label for="spanish" class="spanish" onclick=""
-    ><img src="../public/logos/spain.png" height="30px" width="40px" />
+    ><img
+      src="/logos/spain.png"
+      height="30px"
+      width="40px"
+      alt="Spanish flag"
+    />
   </label>
 
   <input id="english" name="state-d" type="radio" />
   <label for="english" class="english" onclick="">
-    <img src="../public/logos/usa.png" height="30px" width="30px" />
+    <img src="/logos/usa.png" height="30px" width="30px" alt="American flag" />
   </label>
 
   <input id="japanese" name="state-d" type="radio" />
   <label for="japanese" class="japanese" onclick="">
-    <img src="../public/logos/japan.png" height="30px" width="40px" />
+    <img
+      src="/logos/japan.png"
+      height="30px"
+      width="40px"
+      alt="Japanese flag"
+    />
   </label>
 </div>
 <style>
@@ -19,7 +29,7 @@
     float: right;
     background: #242729;
     display: inline-flex;
-    right: 0;
+    right: 10px;
     position: absolute;
   }
   .switch-toggle input {
@@ -70,5 +80,12 @@
     border-radius: 2px;
     color: #fff;
     opacity: 0.25;
+  }
+  label {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>
