@@ -1,6 +1,5 @@
 import * as introductionText from "../../i18n/introdution.json";
 import * as profilesText from "../../i18n/profiles.json";
-
 const intro = document.getElementById("intro");
 const profileTitle = document.getElementById("profile-title");
 const githubProfile = document.getElementById("github-profile");
@@ -9,7 +8,7 @@ const hackerrankProfile = document.getElementById("hackerrank-profile");
 const wordpressProfile = document.getElementById("wordpress-profile");
 const linkedinProfile = document.getElementById("linkedin-profile");
 const flickrProfile = document.getElementById("flickr-profile");
-const button = document.getElementById("language");
+
 const joinText = (text) => {
   return text.join(" ");
 };
@@ -26,24 +25,16 @@ const setContent = (language) => {
   linkedinProfile.innerText = joinText(profilesText.linkedin[language]);
   flickrProfile.innerText = joinText(profilesText.flickr[language]);
 };
+setContent("spanish");
+const switches = document.getElementsByTagName("input");
+const [spanishButton, englishButton, japaneseButton] = switches;
 
-if (button.innerText === "Español") {
+spanishButton.addEventListener("click", () => {
   setContent("spanish");
-} else if (button.innerText === "English") {
+});
+englishButton.addEventListener("click", () => {
   setContent("english");
-} else if (button.innerText === "日本語") {
+});
+japaneseButton.addEventListener("click", () => {
   setContent("japanese");
-}
-
-button.addEventListener("click", () => {
-  if (button.innerText === "Español") {
-    button.innerText = "English";
-    setContent("english");
-  } else if (button.innerText === "English") {
-    button.innerText = "日本語";
-    setContent("japanese");
-  } else {
-    button.innerText = "Español";
-    setContent("spanish");
-  }
 });

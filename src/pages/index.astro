@@ -5,11 +5,14 @@ import Avatar from "../components/Avatar.astro";
 import Card from "../components/Card.astro";
 import Timeline from "../components/Timeline.astro";
 import Section from "../layouts/Section.astro";
+import Language from "../components/Language.astro"
 ---
 
 <Layout title="Programandoconro">
   <main>
-    <button id="language"> Español</button>
+    <Language />
+
+    <br />
     <h1>
       <span class="text-gradient">Programandoconro</span>
     </h1>
@@ -50,7 +53,6 @@ import Section from "../layouts/Section.astro";
   </main>
 </Layout>
 
-<script src="../scripts/setContent.js"></script>
 
 <style>
   :root {
@@ -107,6 +109,7 @@ import Section from "../layouts/Section.astro";
     border-radius: 0.4rem;
     animation: pulse 4s ease-in-out infinite;
   }
+
 
   @keyframes pulse {
     0%,
