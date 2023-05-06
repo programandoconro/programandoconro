@@ -9,14 +9,14 @@ export interface Props {
 const { href, logo, logoWidth = 100, id } = Astro.props as Props;
 ---
 
-<li role="link" class="link-card">
+<div class="link-card">
   <a href={href} target="_blank">
     <h2>
       {logo ? <img src={logo} alt={logo} width={logoWidth} /> : null}
     </h2>
     <p id={id}></p>
   </a>
-</li>
+</div>
 <style>
   :root {
     --link-gradient: linear-gradient(
