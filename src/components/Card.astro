@@ -12,7 +12,11 @@ const { href, logo, logoWidth = 100, id } = Astro.props as Props;
 <div class="link-card">
   <a href={href} target="_blank">
     <h2>
-      {logo ? <img src={logo} alt={logo} width={logoWidth} /> : null}
+      {
+        logo ? (
+          <img src={logo} alt={logo} width={logoWidth} height={100} />
+        ) : null
+      }
     </h2>
     <p id={id}></p>
   </a>
