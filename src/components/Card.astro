@@ -3,10 +3,11 @@ export interface Props {
   href: string;
   logo: string;
   logoWidth?: number;
+  logoHeight?: number;
   id?: string;
 }
 
-const { href, logo, logoWidth = 100, id } = Astro.props as Props;
+const { href, logo, logoWidth = 100, id, logoHeight = 100 } = Astro.props as Props;
 ---
 
 <div class="link-card">
@@ -14,7 +15,7 @@ const { href, logo, logoWidth = 100, id } = Astro.props as Props;
     <h2>
       {
         logo ? (
-          <img src={logo} alt={logo} width={logoWidth} height={100} />
+          <img src={logo} alt={logo} width={logoWidth} height={logoHeight} />
         ) : null
       }
     </h2>
