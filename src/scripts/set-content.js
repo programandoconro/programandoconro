@@ -4,6 +4,7 @@ import * as timelineText from "../../i18n/timeline.json";
 import * as projectsText from "../../i18n/projects.json";
 
 import * as LANGUAGES from "../../i18n/languages.json";
+import { logAnalyticEvent } from "./firebase-analytics";
 
 const intro = document.getElementById("intro");
 const profileTitle = document.getElementById("profile-title");
@@ -96,12 +97,15 @@ const [spanishButton, englishButton, japaneseButton] = switches;
 spanishButton.addEventListener("click", () => {
   setContent("spanish");
   localStorage.setItem("language", "es");
+  logAnalyticEvent("language-spanish");
 });
 englishButton.addEventListener("click", () => {
   setContent("english");
   localStorage.setItem("language", "en");
+  logAnalyticEvent("language-english");
 });
 japaneseButton.addEventListener("click", () => {
   setContent("japanese");
   localStorage.setItem("language", "ja");
+  logAnalyticEvent("language-japanese");
 });
