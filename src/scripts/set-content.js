@@ -21,6 +21,7 @@ const freelancerTimeline = document.getElementById("freelancer-timeline");
 const lateralTimeline = document.getElementById("lateral-timeline");
 const rakutenTimeline = document.getElementById("rakuten-timeline");
 
+console.log(import.meta.env);
 const freelanceProjectsTitle = document.getElementById(
   "freelance-projects-title"
 );

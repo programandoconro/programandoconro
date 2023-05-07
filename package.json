@@ -8,10 +8,10 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "astro": "^1.6.10",
-    "web-vitals": "^3.1.0"
+    "astro": "^2.4.2",
+    "web-vitals": "^3.3.1"
   },
   "dependencies": {
-    "@astrojs/vercel": "^2.4.0"
+    "@astrojs/vercel": "^3.3.0"
   }
 }
