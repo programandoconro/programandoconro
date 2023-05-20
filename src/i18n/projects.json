@@ -36,15 +36,15 @@
     },
     "rustyChess": {
       "spanish": [
-        "Un tablero de ajedrez desarrollado en mi tiempo libre",
+        "Un tablero de ajedrez para PC desarrollado en mi tiempo libre",
         "para aprender Rust, WebAssembly y para practicar tecnologías web."
       ],
       "english": [
-        "A chessboard developed in my free time to learn Rust,",
+        "A chessboard for PC developed in my free time to learn Rust,",
         "WebAssembly, and to practice web technologies."
       ],
       "japanese": [
-        "私の自分な時間でRust、WebAssemblyやWeb技術を練習ために開発したチェースボード。"
+        "私の自分な時間でRust、WebAssemblyやWeb技術を練習ために開発した「PC」チェースボード。"
       ]
     }
   }
