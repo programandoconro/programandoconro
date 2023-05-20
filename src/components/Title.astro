@@ -1,0 +1,63 @@
+<h1 id="title"></h1>
+<script>
+    const titleElement = document.getElementById("title");
+    const pageName = "Programandoconro";
+
+    const typewriterDelay = () => 
+        new Promise((resolve)=>
+            setTimeout(resolve, 100 * Math.random() + 100));
+
+    (async () => {
+        for (let letter of pageName) {
+            titleElement.append(letter);
+            await typewriterDelay();
+        }
+    })();
+</script>
+
+<style>
+	h1{
+    color: var(--astro-white);
+    font-family: monospace;
+    margin: 2rem 0;
+    font-size: 30px;
+    text-align: center;
+	}
+  h1::after{
+    content: "|";
+    animation: pulse 7 1s;
+    font-weight: bolder;
+    color: transparent;
+
+  }
+  h1:hover::after{
+    content: "|";
+    color: orange;
+    animation: pulse infinite 1s;
+
+  }
+  @keyframes pulse {
+    from, to { color: transparent }
+  50% { color: orange }
+  }
+  @media screen and (min-width: 500px) {
+    h1 {
+      font-size: 30px;
+    }
+  }
+  @media screen and (min-width: 500px) {
+    h1 {
+      font-size: 40px;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    h1 {
+      font-size: 50px;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    h1 {
+      font-size: 60px;
+    }
+  }
+</style>

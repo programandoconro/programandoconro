@@ -6,18 +6,17 @@ import Card from "../components/Card.astro";
 import Timeline from "../components/Timeline.astro";
 import Section from "../layouts/Section.astro";
 import Language from "../components/Language.astro";
+import Title from '../components/Title.astro'
 ---
 
 <Layout title="Programandoconro">
   <main>
     <Language />
-
     <br />
-    <h1>
-      <span class="text-gradient">Programandoconro</span>
-    </h1>
 
+    <Title />
     <Avatar />
+
     <section id="intro"></section>
 
     <Section id="profile-title">
@@ -76,26 +75,6 @@ import Language from "../components/Language.astro";
     color: var(--astro-white);
   }
 
-  h1 {
-    margin: 2rem 0;
-    font-size: 30px;
-    text-align: center;
-  }
-  @media screen and (min-width: 500px) {
-    h1 {
-      font-size: 40px;
-    }
-  }
-  @media screen and (min-width: 600px) {
-    h1 {
-      font-size: 50px;
-    }
-  }
-  @media screen and (min-width: 800px) {
-    h1 {
-      font-size: 60px;
-    }
-  }
 
   main {
     margin: auto;
@@ -103,25 +82,4 @@ import Language from "../components/Language.astro";
     max-width: 60ch;
   }
 
-  .text-gradient {
-    font-weight: 900;
-    background-image: var(--astro-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 100% 200%;
-    background-position-y: 100%;
-    border-radius: 0.4rem;
-    animation: pulse 4s ease-in-out infinite;
-    user-select: none;
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      background-position-y: 0%;
-    }
-    50% {
-      background-position-y: 80%;
-    }
-  }
 </style>

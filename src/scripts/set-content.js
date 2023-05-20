@@ -4,7 +4,7 @@ import * as profilesText from "../i18n/profiles.json";
 import * as projectsText from "../i18n/projects.json";
 import * as timelineText from "../i18n/timeline.json";
 
-import {logAnalyticEvent} from "./firebase-analytics";
+import { logAnalyticEvent } from "./firebase-analytics";
 
 const intro = document.getElementById("intro");
 const profileTitle = document.getElementById("profile-title");
@@ -22,23 +22,28 @@ const freelancerTimeline = document.getElementById("freelancer-timeline");
 const lateralTimeline = document.getElementById("lateral-timeline");
 const rakutenTimeline = document.getElementById("rakuten-timeline");
 
-const freelanceProjectsTitle =
-    document.getElementById("freelance-projects-title");
+const freelanceProjectsTitle = document.getElementById(
+  "freelance-projects-title"
+);
 const petProjectsTitle = document.getElementById("pet-projects-title");
-const nakagawaactivityProject =
-    document.getElementById("nakagawaactivity-project");
+const nakagawaactivityProject = document.getElementById(
+  "nakagawaactivity-project"
+);
 const kanjiholicsProject = document.getElementById("kanjiholics-project");
 const rustyChessProject = document.getElementById("rusty-chess-project");
 
-const joinText = (text) => { return text.join(" "); };
+const joinText = (text) => {
+  return text.join(" ");
+};
 
 const setContent = (language) => {
   intro.innerText = joinText(introductionText[language]);
   profileTitle.innerText = joinText(profilesText.title[language]);
 
   githubProfile.innerText = joinText(profilesText.github[language]);
-  stackoverflowProfile.innerText =
-      joinText(profilesText.stackoverflow[language]);
+  stackoverflowProfile.innerText = joinText(
+    profilesText.stackoverflow[language]
+  );
   hackerrankProfile.innerText = joinText(profilesText.hackerrank[language]);
   wordpressProfile.innerText = joinText(profilesText.wordpress[language]);
   linkedinProfile.innerText = joinText(profilesText.linkedin[language]);
@@ -50,23 +55,28 @@ const setContent = (language) => {
   lateralTimeline.innerText = joinText(timelineText.lateral[language]);
   rakutenTimeline.innerText = joinText(timelineText.rakuten[language]);
 
-  freelanceProjectsTitle.innerText =
-      joinText(projectsText.freelance.title[language]);
+  freelanceProjectsTitle.innerText = joinText(
+    projectsText.freelance.title[language]
+  );
   petProjectsTitle.innerText = joinText(projectsText.pet.title[language]);
-  nakagawaactivityProject.innerText =
-      joinText(projectsText.freelance.nakagawaactivity[language]);
-  kanjiholicsProject.innerText =
-      joinText(projectsText.pet.kanjiholics[language]);
+  nakagawaactivityProject.innerText = joinText(
+    projectsText.freelance.nakagawaactivity[language]
+  );
+  kanjiholicsProject.innerText = joinText(
+    projectsText.pet.kanjiholics[language]
+  );
   rustyChessProject.innerText = joinText(projectsText.pet.rustyChess[language]);
 };
 const getLanguage = () => {
   const language = localStorage.getItem("language");
-  if ([ "es", "ja", "en" ].includes(language)) {
+  if (["es", "ja", "en"].includes(language)) {
     return language;
   }
-  return navigator.language.startsWith("es")   ? "es"
-         : navigator.language.startsWith("ja") ? "ja"
-                                               : "en";
+  return navigator.language.startsWith("es")
+    ? "es"
+    : navigator.language.startsWith("ja")
+    ? "ja"
+    : "en";
 };
 const language = getLanguage();
 const input = document.getElementsByTagName("input");
