@@ -27,11 +27,14 @@
 <style>
   .switch-toggle {
     float: right;
-    background: rgb(42, 42, 42);
+    background: var(--astro-dark-gray);
     display: inline-flex;
     right: 10px;
     position: absolute;
     border-radius: 50px;
+    border-color: var(--astro-blue);
+    border-style: solid;
+    border-width: 1pt;
   }
   .switch-toggle input {
     position: absolute;
@@ -40,13 +43,13 @@
   .switch-toggle input + label {
     padding: 7px;
     float: left;
-    color: #fff;
+    color: var(--astro-white);
     cursor: pointer;
   }
   .switch-toggle input:checked + label {
     background: var(--astro-gradient);
     transition: 1s ease;
-    opacity: 0.5;
+    opacity: 0.7;
   }
   .spanish::after,
   .english::after,
@@ -56,7 +59,7 @@
   .spanish:hover,
   .english:hover,
   .japanese:hover {
-    background-color: grey;
+    background-color: var(--astro-blue);
     transition: opacity 0.75s ease;
     opacity: 1;
   }
@@ -72,7 +75,7 @@
   .spanish,
   .english,
   .japanese {
-    color: #fff;
+    color: var(--astro-white);
     opacity: 0.25;
   }
   label {

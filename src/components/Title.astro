@@ -22,6 +22,7 @@
     margin: 2rem 0;
     font-size: 30px;
     text-align: center;
+    user-select: none;
 	}
   h1::after{
     content: "|";
@@ -30,9 +31,16 @@
     color: transparent;
 
   }
+  h1:hover::after{
+    content: "|";
+    animation: pulse infinite 1.75s;
+    font-weight: bolder;
+    color: transparent;
+
+  }
   @keyframes pulse {
     from, to { color: transparent }
-  50% { color: orange }
+  50% { color: var(--astro-orange) }
   }
   @media screen and (min-width: 500px) {
     h1 {

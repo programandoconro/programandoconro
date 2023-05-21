@@ -1,8 +1,9 @@
 ---
 import Card from "../components/Card.astro";
+import Grid from "../layouts/Grid.astro";
 ---
 
-<div class="link-card-grid">
+<Grid>
   <Card
     href="https://github.com/programandoconro/"
     logo="/logos/github.png"
@@ -33,12 +34,4 @@ import Card from "../components/Card.astro";
     logo="/logos/flickr.png"
     id="flickr-profile"
   />
-</div>
-<style>
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
-</style>
+</Grid>

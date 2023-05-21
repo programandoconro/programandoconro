@@ -7,6 +7,7 @@ import Timeline from "../components/Timeline.astro";
 import Section from "../layouts/Section.astro";
 import Language from "../components/Language.astro";
 import Title from '../components/Title.astro'
+import Pets from '../components/Pets.astro'
 ---
 
 <Layout title="Programandoconro">
@@ -37,19 +38,7 @@ import Title from '../components/Title.astro'
     </Section>
 
     <Section id="pet-projects-title">
-      <Card
-        href="https://correctmyjapanese.vercel.app/"
-        logo="./logos/kanjiholic.png"
-        logoWidth={200}
-        id="kanjiholics-project"
-      />
-      <Card
-        href="https://rusty-chess.vercel.app/"
-        logo="./logos/rusty-chess.jpg"
-        logoWidth={183}
-        logoHeight={99}
-        id="rusty-chess-project"
-      />
+		<Pets />
     </Section>
 
     <footer>© Programandoconro 2023</footer>
@@ -65,7 +54,7 @@ import Title from '../components/Title.astro'
     --astro-gradient: linear-gradient(
       0deg,
       var(--astro-blue),
-      rgb(255, 255, 255)
+      var(--astro-white)
     );
   }
   section {
@@ -79,10 +68,12 @@ import Title from '../components/Title.astro'
   }
 
 
+
+
   main {
     margin: auto;
     padding: 1em;
-    max-width: 60ch;
+    max-width: 80ch;
   }
 
 </style>
