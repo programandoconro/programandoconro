@@ -1,4 +1,4 @@
-<h1 id="title"></h1>
+<h1 id="title"><code></code></h1>
 <script>
     const titleElement = document.getElementById("title");
     const pageName = "Programandoconro";
@@ -19,10 +19,10 @@
 	h1{
     color: var(--astro-white);
     font-family: monospace;
+    font-family: 'Press Start 2P', cursive;
     margin: 2rem 0;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
-    user-select: none;
 	}
   h1::after{
     content: "|";
@@ -42,24 +42,25 @@
     from, to { color: transparent }
   50% { color: var(--astro-orange) }
   }
+
   @media screen and (min-width: 500px) {
     h1 {
-      font-size: 30px;
+      font-size: 15px;
     }
   }
   @media screen and (min-width: 500px) {
     h1 {
-      font-size: 40px;
+      font-size: 25px;
     }
   }
   @media screen and (min-width: 600px) {
     h1 {
-      font-size: 50px;
+      font-size: 30px;
     }
   }
   @media screen and (min-width: 800px) {
     h1 {
-      font-size: 60px;
+      font-size: 40px;
     }
   }
 </style>

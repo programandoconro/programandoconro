@@ -4,7 +4,7 @@
     <div class="direction-r">
       <div class="flag-wrapper">
         <span class="flag">UC</span>
-        <span class="time-wrapper"><span class="time">2013</span></span>
+        <span class="time-wrapper"><span class="time">2008-2013</span></span>
       </div>
       <div class="desc" id="uc-timeline"></div>
     </div>
@@ -35,7 +35,7 @@
     <div class="direction-l">
       <div class="flag-wrapper">
         <span class="flag">Lateral Thinking</span>
-        <span class="time-wrapper"><span class="time">2020-2023</span></span>
+        <span class="time-wrapper"><span class="time">2020-2022</span></span>
       </div>
       <div class="desc" id="lateral-timeline"></div>
     </div>
@@ -47,7 +47,7 @@
       <div class="flag-wrapper">
         <span class="flag">Rakuten</span>
         <span class="time-wrapper"
-          ><span class="time">2023 - actualmente</span>
+          ><span class="time">2022 - actualmente</span>
         </span>
       </div>
       <div class="desc" id="rakuten-timeline"></div>
@@ -191,9 +191,9 @@
     width: 12px;
     height: 12px;
     margin-top: -10px;
-    background: #fff;
     border-radius: 10px;
     border: 4px solid var(--astro-blue);
+    background-color: var(--astro-orange);
     z-index: 10;
   }
   .blinker .flag:before {
@@ -308,6 +308,7 @@
       background: #fff;
       border-radius: 10px;
       border: 4px solid var(--astro-blue);
+      background-color: var(--astro-orange);
       z-index: 10;
     }
 
@@ -383,10 +384,12 @@
     }
     50% {
       opacity: 0.5;
+      background: blue;
     }
     to {
       opacity: 1;
       border: 4px solid var(--astro-orange);
+      background: blue;
     }
   }
 </style>

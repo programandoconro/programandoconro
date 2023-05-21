@@ -17,11 +17,12 @@ import Pets from '../components/Pets.astro'
     <Title />
     <Avatar />
 
-    <section id="intro"></section>
+    <section id="intro" ></section>
 
     <Section id="profile-title">
       <Profile />
     </Section>
+
 
     <Section title="Timeline">
       <Timeline />
@@ -38,7 +39,7 @@ import Pets from '../components/Pets.astro'
     </Section>
 
     <Section id="pet-projects-title">
-		<Pets />
+		  <Pets />
     </Section>
 
     <footer>© Programandoconro 2023</footer>
@@ -58,8 +59,10 @@ import Pets from '../components/Pets.astro'
     );
   }
   section {
-    font: 1.2em "Fira Sans", serif;
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
     color: var(--astro-white);
+    min-height: 200px;
   }
   footer {
     padding-top: 20px;
@@ -68,12 +71,33 @@ import Pets from '../components/Pets.astro'
   }
 
 
+  @media screen and (min-width: 100px) {
+    section {
+      font-size: 25px;
+    }
+  }
+  @media screen and (min-width: 500px) {
+    section {
+      font-size: 35px;
+    }
+  }
+  @media screen and (min-width: 700px) {
+    section {
+      font-size: 38x;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    section {
+      font-size: 42px;
+    }
+  }
+
 
 
   main {
     margin: auto;
     padding: 1em;
-    max-width: 80ch;
+    max-width: 85ch;
   }
 
 </style>
