@@ -47,7 +47,7 @@
       <div class="flag-wrapper">
         <span class="flag">Rakuten</span>
         <span class="time-wrapper"
-          ><span class="time">2022 - actualmente</span>
+          ><span class="time">2022 ~ </span>
         </span>
       </div>
       <div class="desc" id="rakuten-timeline"></div>
@@ -163,6 +163,7 @@
 
     font-weight: 600;
     text-align: left;
+    font-family: 'Nerko One', cursive;
   }
 
   .direction-l .flag {
@@ -191,9 +192,9 @@
     width: 12px;
     height: 12px;
     margin-top: -10px;
+    background: #fff;
     border-radius: 10px;
     border: 4px solid var(--astro-blue);
-    background-color: var(--astro-orange);
     z-index: 10;
   }
   .blinker .flag:before {
@@ -234,6 +235,7 @@
 
   .time-wrapper {
     display: inline;
+    font-family: 'Nerko One', cursive;
 
     line-height: 1em;
     font-size: 0.66666em;
@@ -308,7 +310,6 @@
       background: #fff;
       border-radius: 10px;
       border: 4px solid var(--astro-blue);
-      background-color: var(--astro-orange);
       z-index: 10;
     }
 
@@ -380,16 +381,14 @@
   @keyframes blinker {
     from {
       opacity: 1;
-      border: 4px solid var(--astro-orange);
+      background-color: var(--astro-orange);
     }
     50% {
       opacity: 0.5;
-      background: blue;
     }
     to {
       opacity: 1;
-      border: 4px solid var(--astro-orange);
-      background: blue;
+      background-color: var(--astro-orange);
     }
   }
 </style>
