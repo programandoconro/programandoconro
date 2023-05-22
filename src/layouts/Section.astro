@@ -22,29 +22,33 @@ const { title, id } = Astro.props as Props;
     color: var(--astro-white);
   }
   section {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Nerko One', 'Noto Serif JP', serif;
     justify-content: center;
     display: grid;
+  }
+  p{
+    font-family: 'Anton', sans-serif;
+
   }
 
   @media screen and (min-width: 100px) {
     section {
-      font-size: 16px;
+      font-size: 22px;
     }
   }
   @media screen and (min-width: 500px) {
     section {
-      font-size: 18px;
+      font-size: 24px;
     }
   }
   @media screen and (min-width: 700px) {
     section {
-      font-size: 19x;
+      font-size: 26px;
     }
   }
   @media screen and (min-width: 800px) {
     section {
-      font-size: 20px;
+      font-size: 28px;
     }
   }
 </style>
