@@ -10,14 +10,18 @@ function setElementHref(element, language) {
   switch (language) {
     case LANGUAGES.japanese: {
       element.setAttribute("href", "/files/CV_Rodrigo_Diaz_jap.pdf");
+      element.style.setProperty("--content", "'履歴書をダウンロード'");
+
       break;
     }
     case LANGUAGES.spanish: {
       element.setAttribute("href", "/files/CV_Rodrigo_Diaz_es.pdf");
+      element.style.setProperty("--content", "'Descargar CV'");
       break;
     }
     default: {
       element.setAttribute("href", "/files/CV_Rodrigo_Diaz_eng.pdf");
+      element.style.setProperty("--content", "'Download CV'");
     }
   }
 }
