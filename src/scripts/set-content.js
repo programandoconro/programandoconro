@@ -3,6 +3,7 @@ import * as LANGUAGES from "../i18n/languages.json";
 import * as profilesText from "../i18n/profiles.json";
 import * as projectsText from "../i18n/projects.json";
 import * as timelineText from "../i18n/timeline.json";
+import { downloadFile } from "./download-file";
 
 import { logAnalyticEvent } from "./firebase-analytics";
 
@@ -66,6 +67,8 @@ const setContent = (language) => {
     projectsText.pet.kanjiholics[language]
   );
   rustyChessProject.innerText = joinText(projectsText.pet.rustyChess[language]);
+
+  downloadFile(language);
 };
 const getLanguage = () => {
   const language = localStorage.getItem("language");

@@ -1,0 +1,92 @@
+---
+export interface Props {
+  id: string;
+}
+
+const { id } = Astro.props as Props;
+---
+
+  <a id={id} download>
+
+  <img src="/logos/cv.png" alt="cv download"  width="40px">
+</a>
+
+
+<style>
+    a {
+        padding: 4px;
+        border-radius: 5px;
+        border-color: var(--astro-blue);
+        border-style: solid;
+        border-width: 1pt;
+        left: 30px;
+        position: absolute;
+        text-decoration: inherit;
+        color: inherit;
+        color: var(--astro-white);
+        background: var(--astro-dark-gray);
+        font-family: 'Dancing Script', cursive;
+        font-size: large;
+        align-items: center;
+        display: flex;
+        gap: 4px;
+        opacity: 0.75;
+        
+    }
+
+    a:hover {
+        transition: background 1s ease-in-out;
+        background-color: var(--astro-blue);
+        opacity: 1;
+    }
+
+    .anchor-japanese:hover::after{
+        content: "履歴書をダウンロード";
+    }
+    a:hover::after{
+        content: "download CV";
+    }
+    .anchor-spanish:hover::after{
+        content: "descargar CV";
+    }
+  @media only screen and (max-width: 600px) {
+   a {
+      left: 10px;
+    }
+    img {
+        width: 35px;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    a {
+      height: 30px;
+      padding: 8px;
+    }a::after{
+        content: "download CV";
+    }
+    img {
+        width: 50px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    a {
+      height: 35px;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    a {
+      height: 40px;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    a {
+      height: 42px;
+      font-size: larger;
+    }
+  }
+
+
+</style>
+
+
+
