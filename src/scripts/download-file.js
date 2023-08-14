@@ -2,10 +2,8 @@ import * as LANGUAGES from "../i18n/languages.json";
 
 export function downloadFile(language) {
   const linkHeader = document.getElementById("download-file-header");
-  const linkFooter = document.getElementById("download-file-footer");
 
   setElementHref(linkHeader, language);
-  setElementHref(linkFooter, language);
 }
 
 function setElementHref(element, language) {
