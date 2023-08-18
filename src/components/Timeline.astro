@@ -1,59 +1,61 @@
-<ul class="timeline">
-  <!-- Item 5 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <a href="https://en.wikipedia.org/wiki/University_of_Carabobo" target="_blank" class="flag">UC</a>
-        <span class="time-wrapper"><span class="time">2008-2013</span></span>
+<div class="timeline-wrapper">
+  <ul class="timeline">
+    <!-- Item 5 -->
+    <li>
+      <div class="direction-r">
+        <div class="flag-wrapper">
+          <a href="https://en.wikipedia.org/wiki/University_of_Carabobo" target="_blank" class="flag">UC</a>
+          <span class="time-wrapper"><span class="time">2008-2013</span></span>
+        </div>
+        <div class="desc" id="uc-timeline"></div>
       </div>
-      <div class="desc" id="uc-timeline"></div>
-    </div>
-  </li>
-  <!-- Item 4 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <a href="https://en.wikipedia.org/wiki/Venezuelan_Institute_for_Scientific_Research" target="_blank" class="flag">IVIC</a>
-        <span class="time-wrapper"><span class="time">2013 - 2019</span></span>
+    </li>
+    <!-- Item 4 -->
+    <li>
+      <div class="direction-l">
+        <div class="flag-wrapper">
+          <a href="https://en.wikipedia.org/wiki/Venezuelan_Institute_for_Scientific_Research" target="_blank" class="flag">IVIC</a>
+          <span class="time-wrapper"><span class="time">2013 - 2019</span></span>
+        </div>
+        <div class="desc" id="ivic-timeline"></div>
       </div>
-      <div class="desc" id="ivic-timeline"></div>
-    </div>
-  </li>
+    </li>
 
-  <!-- Item 3 -->
-  <li>
-    <div class="direction-r">
-      <div class="flag-wrapper">
-        <a class="flag" href="https://programandoconro.wordpress.com" target="_blank">Freelancer</a>
-        <span class="time-wrapper"><span class="time">2019 - 2020</span></span>
+    <!-- Item 3 -->
+    <li>
+      <div class="direction-r">
+        <div class="flag-wrapper">
+          <a class="flag" href="https://programandoconro.wordpress.com" target="_blank">Freelancer</a>
+          <span class="time-wrapper"><span class="time">2019 - 2020</span></span>
+        </div>
+        <div class="desc" id="freelancer-timeline"></div>
       </div>
-      <div class="desc" id="freelancer-timeline"></div>
-    </div>
-  </li>
-  <!-- Item 2 -->
-  <li>
-    <div class="direction-l">
-      <div class="flag-wrapper">
-        <a class="flag" href="https://www.lateral-t.co.jp/" target="_blank">Lateral Thinking</a>
-        <span class="time-wrapper"><span class="time">2020-2022</span></span>
+    </li>
+    <!-- Item 2 -->
+    <li>
+      <div class="direction-l">
+        <div class="flag-wrapper">
+          <a class="flag" href="https://www.lateral-t.co.jp/" target="_blank">Lateral Thinking</a>
+          <span class="time-wrapper"><span class="time">2020-2022</span></span>
+        </div>
+        <div class="desc" id="lateral-timeline"></div>
       </div>
-      <div class="desc" id="lateral-timeline"></div>
-    </div>
-  </li>
+    </li>
 
-  <!-- Item 1 -->
-  <li>
-    <div class="direction-r blinker">
-      <div class="flag-wrapper">
-        <a class="flag" href="https://global.rakuten.com/corp/" target="_blank">Rakuten</a>
-        <span class="time-wrapper"
-          ><span class="time">2022 ~ </span>
-        </span>
+    <!-- Item 1 -->
+    <li>
+      <div class="direction-r blinker">
+        <div class="flag-wrapper">
+          <a class="flag" href="https://global.rakuten.com/corp/" target="_blank">Rakuten</a>
+          <span class="time-wrapper"
+            ><span class="time">2022 ~ </span>
+          </span>
+        </div>
+        <div class="desc" id="rakuten-timeline"></div>
       </div>
-      <div class="desc" id="rakuten-timeline"></div>
-    </div>
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>
 
 <style>
   .timeline {
@@ -67,14 +69,16 @@
     padding: 0;
 
     color: rgb(50, 50, 50);
-    font-family: "Open Sans", sans-serif;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Nerko One', 'Noto Serif JP', serif;
     font-size: 100.5%;
     line-height: 1.6em;
   }
-  a{
-    text-decoration: inherit;
-    color: inherit;
+  .timeline-wrapper {
+    display: flex;
+    justify-content: center;
+    border: solid 1px var(--astro-orange);
+    border-radius: 0.5rem;
+    padding: 10px;
   }
 
   .timeline:before {
@@ -165,11 +169,12 @@
     background: rgb(248, 248, 248);
     padding: 6px 10px;
     border-radius: 5px;
-
     font-weight: 600;
     text-align: left;
-    font-family: 'Nerko One', cursive;
-    font-family: 'Anton', sans-serif;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px !important;
+  }
+  a{
+    color: inherit;
   }
 
   .direction-l .flag {
@@ -198,9 +203,9 @@
     width: 12px;
     height: 12px;
     margin-top: -10px;
-    background: #fff;
+    background: var(--astro-blue);
     border-radius: 10px;
-    border: 4px solid var(--astro-blue);
+    border: 4px solid var(--astro-orange);
     z-index: 10;
   }
   .blinker .flag:before {
@@ -241,7 +246,6 @@
 
   .time-wrapper {
     display: inline;
-    font-family: 'Nerko One', cursive;
 
     line-height: 1em;
     font-size: 0.66666em;
@@ -268,7 +272,6 @@
     color: #fff;
 
     font-size: 0.77777em;
-    font-style: italic;
     line-height: 1.5em;
   }
 
@@ -387,14 +390,14 @@
   @keyframes blinker {
     from {
       opacity: 1;
-      background-color: var(--astro-orange);
+      background-color: var(--astro-blue);
     }
     50% {
       opacity: 0.5;
     }
     to {
       opacity: 1;
-      background-color: var(--astro-orange);
+      background-color: var(--astro-blue);
     }
   }
 </style>

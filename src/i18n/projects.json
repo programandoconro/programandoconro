@@ -1,9 +1,9 @@
 {
   "freelance": {
     "title": {
-      "spanish": ["Proyecto freelance reciente"],
-      "english": ["Recent freelance project"],
-      "japanese": ["最近のフリーランサープロジェクト"]
+      "spanish": ["Proyecto reciente"],
+      "english": ["Recent project"],
+      "japanese": ["Recent project"]
     },
     "nakagawaactivity": {
       "spanish": [
@@ -19,9 +19,9 @@
   },
   "pet": {
     "title": {
-      "spanish": ["Proyectos mascota recientes"],
-      "english": ["Recent pet projects"],
-      "japanese": ["最近のペットプロジェクト"]
+      "spanish": ["Proyectos mascota"],
+      "english": ["Sample pet projects"],
+      "japanese": ["Sample pet projects"]
     },
     "kanjiholics": {
       "spanish": [

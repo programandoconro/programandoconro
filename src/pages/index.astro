@@ -40,7 +40,9 @@ import Download from "../components/Download.astro";
     </Section>
 
     <Section title="Timeline">
+      <div class="timeline">
       <Timeline />
+      </div>
     </Section>
 
 
@@ -63,7 +65,6 @@ import Download from "../components/Download.astro";
   }
   section {
     font-family: 'Nerko One', 'Noto Serif JP', serif;
-    text-align: center;
     font-size: 32px;
     color: var(--astro-white);
     min-height: 150px;
@@ -77,7 +78,7 @@ import Download from "../components/Download.astro";
 
   @media screen and (min-width: 100px) {
     section {
-      font-size: 32px;
+      font-size: 30px;
     }
   }
   @media screen and (min-width: 500px) {
@@ -102,6 +103,10 @@ import Download from "../components/Download.astro";
     margin: auto;
     padding: 1em;
     max-width: 85ch;
+  }
+
+  #intro {
+    padding-bottom: 50px;
   }
 
   footer {

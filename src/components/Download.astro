@@ -25,12 +25,11 @@ const { id } = Astro.props as Props;
         color: inherit;
         color: var(--astro-white);
         background: var(--astro-dark-gray);
-        font-family: 'Dancing Script', cursive;
-        font-size: large;
+        font-family: 'Nerko One', 'Noto Serif JP', serif;
+        font-size: small;
         align-items: center;
         display: flex;
         gap: 4px;
-        opacity: 0.75;
         
     }
 
@@ -55,8 +54,6 @@ const { id } = Astro.props as Props;
     a {
       height: 30px;
       padding: 8px;
-    }a::after{
-        content: var(--content);
     }
     img {
         width: 50px;
@@ -75,7 +72,9 @@ const { id } = Astro.props as Props;
   @media only screen and (min-width: 1200px) {
     a {
       height: 42px;
-      font-size: larger;
+    }
+    a::after{
+        content: var(--content);
     }
   }
 
