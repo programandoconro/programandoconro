@@ -46,6 +46,19 @@
       "japanese": [
         "私の自分な時間でRust、WebAssemblyやWeb技術を練習ために開発した「PC」チェースボード。"
       ]
+    },
+    "weatherCalendar": {
+      "spanish": [
+        "Calendario de pronósticos climáticos para los siguientes 5 días.",
+        "Realizado con NextJS 14 y openweather api. "
+      ],
+      "english": [
+        "Weather forecast for the next 5 days.",
+        "Made using NextJS 14 and openwather api."
+      ],
+      "japanese": [
+        "つぎ５日の天気予報カレンダー。NextJSやOpenweather APIで作成しました。"
+      ]
     }
   }
 }

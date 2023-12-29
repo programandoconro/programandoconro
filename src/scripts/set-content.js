@@ -32,6 +32,9 @@ const nakagawaactivityProject = document.getElementById(
 );
 const kanjiholicsProject = document.getElementById("kanjiholics-project");
 const rustyChessProject = document.getElementById("rusty-chess-project");
+const weatherCalendarProject = document.getElementById(
+  "weather-calendar-project"
+);
 
 const joinText = (text) => {
   return text.join(" ");
@@ -67,6 +70,9 @@ const setContent = (language) => {
     projectsText.pet.kanjiholics[language]
   );
   rustyChessProject.innerText = joinText(projectsText.pet.rustyChess[language]);
+  weatherCalendarProject.innerText = joinText(
+    projectsText.pet.weatherCalendar[language]
+  );
 
   downloadFile(language);
 };
