@@ -34,14 +34,27 @@ const { id } = Astro.props as Props;
     }
 
     a:hover {
-        transition: background 1s ease-in-out;
+        transition: background 0.5s ease-in-out;
         background-color: var(--astro-blue);
         opacity: 1;
     }
 
     a:hover::after{
         content: var(--content);
+        animation: showMessage 0.5s ease-in-out;
     }
+    
+    @keyframes showMessage {
+      0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+      
+    }
+
+
   @media only screen and (max-width: 600px) {
    a {
       left: 10px;

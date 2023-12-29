@@ -1,0 +1,23 @@
+---
+import Download from './Download.astro'
+import Language from './Language.astro';
+
+---
+<header>
+    <Download id="download-file-header" />
+    <Language />
+</header>
+
+<style>
+    header {
+        width: 100%;
+    }
+  @media only screen and (min-width: 1400px) {
+    header {
+        position:fixed;
+        z-index: 2;
+        left: 0;
+
+    }
+  }
+</style>
