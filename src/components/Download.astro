@@ -85,10 +85,15 @@ const { id } = Astro.props as Props;
   @media only screen and (min-width: 1200px) {
     a {
       height: 42px;
+      animation: none;
     }
-    a::after{
-        content: var(--content);
+    @keyframes showMessage {
+      0%{
+        opacity: 1;
+      }
+      
     }
+
   }
 
 
