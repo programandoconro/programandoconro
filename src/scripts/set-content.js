@@ -31,10 +31,12 @@ const nakagawaactivityProject = document.getElementById(
   "nakagawaactivity-project"
 );
 const kanjiholicsProject = document.getElementById("kanjiholics-project");
+const kanjiholicsAndroid = document.getElementById("kanjiholics-android");
 const rustyChessProject = document.getElementById("rusty-chess-project");
 const weatherCalendarProject = document.getElementById(
   "weather-calendar-project"
 );
+const cactusRestaurant = document.getElementById("cactus-restaurant");
 
 const joinText = (text) => {
   return text.join(" ");
@@ -69,9 +71,15 @@ const setContent = (language) => {
   kanjiholicsProject.innerText = joinText(
     projectsText.pet.kanjiholics[language]
   );
+  kanjiholicsAndroid.innerText = joinText(
+    projectsText.pet.kanjiholicsAndroid[language]
+  );
   rustyChessProject.innerText = joinText(projectsText.pet.rustyChess[language]);
   weatherCalendarProject.innerText = joinText(
     projectsText.pet.weatherCalendar[language]
+  );
+  cactusRestaurant.innerText = joinText(
+    projectsText.pet.cactusRestaurant[language]
   );
 
   downloadFile(language);

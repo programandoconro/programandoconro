@@ -26,13 +26,27 @@
     "kanjiholics": {
       "spanish": [
         "Un dashboard que emula la funcionalidad de corregir",
-        "lenguages de HelloTalk. Con login de Google."
+        "lenguages de HelloTalk. Con login de Google, Redis database y Redux."
       ],
       "english": [
         "A dashboard to emulate HelloTalk correction functionality.",
-        "With Google authentication."
+        "With Google authentication, Redis database and Redux."
       ],
-      "japanese": ["HelloTalkの修正機能の真似ダッシュボード。", "Googleの認証"]
+      "japanese": [
+        "HelloTalkの修正機能の真似ダッシュボード。",
+        "Googleの認証、REDISデータベースやREDUX。"
+      ]
+    },
+    "kanjiholicsAndroid": {
+      "spanish": [
+        "Android app para guardar, agrupar y practicar tus Kanjis favoritos. Inspirado en Anki"
+      ],
+      "english": [
+        "Android App to group, practice and master your favorite Kanjis. Inspirated by Anki"
+      ],
+      "japanese": [
+        "好きな漢字を保存、グループや練習するためにAndroidアプリです。Ankiのインスピレーション。"
+      ]
     },
     "rustyChess": {
       "spanish": [
@@ -45,6 +59,20 @@
       ],
       "japanese": [
         "私の自分な時間でRust、WebAssemblyやWeb技術を練習ために開発した「PC」チェースボード。"
+      ]
+    },
+    "cactusRestaurant": {
+      "spanish": [
+        "Envía datos de reservación de restaurant y recibe la confirmación en tiempo real.",
+        "Mi primer proyecto con React Native."
+      ],
+      "english": [
+        "Send restaurant reservation data and receive confirmation in real time.",
+        "My first React Native project."
+      ],
+      "japanese": [
+        "レストラン予約のデータの送りやリアルタイム確認。",
+        "私のReactNative最初のプロジェクト。"
       ]
     },
     "weatherCalendar": {
