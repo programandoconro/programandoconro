@@ -19,9 +19,9 @@
   },
   "pet": {
     "title": {
-      "spanish": ["Proyectos mascota"],
-      "english": ["Sample pet projects"],
-      "japanese": ["Sample pet projects"]
+      "spanish": ["Algunos proyectos mascota"],
+      "english": ["Some sample pet projects"],
+      "japanese": ["Some sample pet projects"]
     },
     "kanjiholics": {
       "spanish": [
