@@ -49,15 +49,18 @@
     },
     "weatherCalendar": {
       "spanish": [
-        "Calendario de pronósticos climáticos para los siguientes 5 días.",
-        "Realizado con NextJS 14 y openweather api. "
+        "Calendario de pronósticos climáticos.",
+        "Realizado con NextJS 14 y openweather api.",
+        "Con SSR y actualización automática de datos."
       ],
       "english": [
-        "Weather forecast for the next 5 days.",
-        "Made using NextJS 14 and openwather api."
+        "Weather forecast calendar.",
+        "Made using NextJS 14 and openweather api.",
+        "With SSR and automatic update of data."
       ],
       "japanese": [
-        "つぎ５日の天気予報カレンダー。NextJSやOpenweather APIで作成しました。"
+        "天気予報カレンダー。NextJSやopenweatherAPIで作成しました。",
+        "SSRや自動的にデータ更新。"
       ]
     }
   }
