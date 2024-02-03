@@ -20,14 +20,31 @@ const { title } = Astro.props as Props;
       name="google-site-verification"
       content="DZbQfXAIB0e6bEgFP7d_6Of9NelQnmcOhzyNmISmHVo"
     />
-    <meta property="og:image" content="https://www.programandoconro.com/logos/programandoconro.avif" />
-    <meta name="twitter:image" content="https://www.programandoconro.com/logos/programandoconro.avif" />
+    <meta
+      property="og:image"
+      content="https://www.programandoconro.com/logos/programandoconro_logo.jpg"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://www.programandoconro.com/",
+        "logo": "https://www.programandoconro.com/logos/programandoconro_logo.jpg"
+      }
+    </script>
+    <meta
+      name="twitter:image"
+      content="https://www.programandoconro.com/logos/programandoconro_logo.jpg"
+    />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?&family=Nerko+One&family=Noto+Serif+JP:wght@900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?&family=Nerko+One&family=Noto+Serif+JP:wght@900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <script>
       import { webVitals } from "../lib/vitals";
 
@@ -54,13 +71,13 @@ const { title } = Astro.props as Props;
 
     --color-border: var(--astro-black);
 
-    --astro-gray: #CFDBD5;
-    --astro-white: #E8EDDF;
-    --astro-orange: #F5CB5C;
+    --astro-gray: #cfdbd5;
+    --astro-white: #e8eddf;
+    --astro-orange: #f5cb5c;
     --astro-black: #242423;
     --astro-dark-gray: #333533;
     --astro-blue: #023047;
-    --content: ""
+    --content: "";
   }
 
   html {
