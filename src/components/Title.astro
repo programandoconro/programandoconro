@@ -7,12 +7,20 @@
         new Promise((resolve)=>
             setTimeout(resolve, 100 * Math.random() + 100));
 
-    (async () => {
+    async function animateTypewriterRecursively(){
         for (let letter of pageName) {
             titleElement.append(letter);
             await typewriterDelay();
+            const isAnimationFinish = titleElement.innerText.length === pageName.length
+            if(isAnimationFinish){
+              setTimeout(()=>{
+              titleElement.innerText=''
+              animateTypewriterRecursively()
+              }, 10000)
+            }
         }
-    })();
+    };
+    animateTypewriterRecursively()
 </script>
 
 <style>
