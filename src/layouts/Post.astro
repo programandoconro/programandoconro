@@ -31,22 +31,34 @@ const { title } = Astro.props as Props;
 
   const localStorage = window.localStorage;
   const theme = localStorage.getItem('theme') || 'dark';
+
   if(theme === 'light') {
     layout.classList.add('light-theme');
   } 
   else{
     layout.classList.remove('light-theme');
-    const links = document.querySelectorAll('a');
-    links.forEach(link => {
-      link.style.color = 'white';
-      link.style.fontWeight = 'bold';
-    })
   }
+
+  const getIsLightTheme = () => layout.classList.contains('light-theme');
+  const paintLinks = () => {
+    const links = layout.querySelectorAll('a');
+      links.forEach(link=>{
+        if(!getIsLightTheme()) {
+            link.style.color = 'white';
+        }
+        else{
+            link.style.color = 'blue';
+
+        }
+      })
+
+  }
+  paintLinks()
 
   const onClick = () => {
     layout.classList.toggle('light-theme');
-    const isLightTheme = layout.classList.contains('light-theme');
-    localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+    localStorage.setItem('theme', getIsLightTheme() ? 'light' : 'dark');
+    paintLinks()
 
   }
   const button = document.getElementById('theme-button');
