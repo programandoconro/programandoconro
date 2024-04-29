@@ -8,6 +8,7 @@ import Section from "../layouts/Section.astro";
 import Title from '../components/Title.astro'
 import Pets from '../components/Pets.astro'
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Programandoconro">
@@ -37,6 +38,13 @@ import Header from "../components/Header.astro";
 		  <Pets />
     </Section>
 
+    <Section title="My Blog" id="my-blog">
+      <Card href="/blog" logoWidth={100} logoHeight={100} logo="icons/blog.png" openInSameTab={true}/ >
+
+
+    </Section>
+
+
     <Section title="Timeline">
       <div class="timeline">
       <Timeline />
@@ -44,8 +52,8 @@ import Header from "../components/Header.astro";
     </Section>
 
 
+    <Footer />
 
-    <footer>© Programandoconro 2024</footer>
   </main>
 </Layout>
 
@@ -67,12 +75,6 @@ import Header from "../components/Header.astro";
     color: var(--astro-white);
     min-height: 150px;
   }
-  footer {
-    padding-top: 20px;
-    text-align: center;
-    color: var(--astro-white);
-  }
-
 
   @media screen and (min-width: 100px) {
     section {
@@ -95,20 +97,12 @@ import Header from "../components/Header.astro";
     }
   }
 
-
-
   main {
     margin: auto;
     padding: 1em;
     max-width: 85ch;
   }
 
-  footer {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 80%;
-    margin-top: 50px;
-    
-  }
 
 
-</style>
+</style

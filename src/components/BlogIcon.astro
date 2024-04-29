@@ -1,20 +1,14 @@
----
-export interface Props {
-  id: string;
-}
-
-const { id } = Astro.props as Props;
----
-
-  <a id={id} class={id} download>
-
-  <img src="/logos/cv.png" alt="cv download"  width="40px">
+<a href="/blog" id="blog-icon">
+  <img src="/icons/blog.png"/> 
 </a>
 
-
 <style>
+  img{
+    height: 50px;
+  }
     a {
-        position: absolute;
+      position: absolute;
+        right: 50%;
         padding: 2px;
         border-radius: 5px;
         border-color: var(--astro-blue);
@@ -29,7 +23,7 @@ const { id } = Astro.props as Props;
         align-items: center;
         display: flex;
         gap: 4px;
-        z-index: 2;
+        cursor: pointer;
         
     }
 
@@ -38,31 +32,25 @@ const { id } = Astro.props as Props;
     a:hover {
         transition: background 0.5s ease-in-out;
         background-color: var(--astro-blue);
-        opacity: 1;
     }
-    a:hover::after{
-        content: var(--content);
+    a:hover::before{
+        content: 'My Blog';
         animation: showMessage 0.5s ease-in-out;
+        opacity: 1 ;
+        z-index: 3;
     }
   }
-    
     @keyframes showMessage {
       0%{
-        opacity: 0;
-      }
-      100%{
         opacity: 1;
       }
       
     }
 
-
   @media only screen and (max-width: 600px) {
-   a {
-      left: 10px;
-    }
     img {
         width: 35px;
+        height: 35px;
     }
   }
   @media only screen and (min-width: 600px) {
@@ -97,6 +85,7 @@ const { id } = Astro.props as Props;
     }
 
   }
+
 
 
 </style>

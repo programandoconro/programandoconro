@@ -1,23 +1,29 @@
 ---
 import Download from './Download.astro'
 import Language from './Language.astro';
+import BlogIcon from './BlogIcon.astro'
 
 ---
 <header>
     <Download id="download-file-header" />
+    <BlogIcon />
     <Language />
+
 </header>
 
 <style>
     header {
-        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
     }
   @media only screen and (min-width: 1400px) {
     header {
-        position:fixed;
         z-index: 2;
         left: 0;
 
     }
   }
+
+
 </style>

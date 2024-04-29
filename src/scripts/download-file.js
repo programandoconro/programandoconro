@@ -16,12 +16,12 @@ function setElementHref(element, language) {
     }
     case LANGUAGES.spanish: {
       element.setAttribute("href", "/files/CV_Rodrigo_Diaz_es.pdf");
-      element.style.setProperty("--content", "'Descargar CV'");
+      element.style.setProperty("--content", "'Mi Curriculum'");
       break;
     }
     default: {
       element.setAttribute("href", "/files/CV_Rodrigo_Diaz_eng.pdf");
-      element.style.setProperty("--content", "'Download CV'");
+      element.style.setProperty("--content", "'My Curriculum'");
     }
   }
 }
