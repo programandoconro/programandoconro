@@ -1,38 +1,50 @@
-import Avatar from '../../../components/Avatar.astro'
-import Post from '../../../layouts/Post.astro'
-export const title = 'Migrating to Neovim from VScode';
+import Avatar from "../../../components/Avatar.astro";
+import Post from "../../../layouts/Post.astro";
+export const title = "Migrating to Neovim from VScode";
 
 <Post title={title}>
 
-
-
-
-
 This is a step I have trying for years, ending up depressed at VScode. I have been putting the pieces together, and now, I think I am ready to fly around files and lines of code, as a Neovim Ninja.
 
-Of course I am using vim extension in VScode, but it is not enough for me. There are a lot of functionalities I have no access to, or have limitations. 
+Of course I am using vim extension in VScode, but it is not enough for me. There are a lot of functionalities I have no access to, or have limitations.
 
 But this will be no easy task, these are the requirements for a good code editor in my opinion:
 
-Things I have in VScode that I use all the time
-1. Autocomplete 
-2. Auto import
-3. Go to definition / reference
-4. Search word/regex in the whole project
-5. Open file from path
-6. See git differences before a commit
-7. Auto closing tags
-8. File explorer and terminal
-9. Toggle latest files
+There are a lot things in VScode that I cannot live without. I will find a similar/better approach in Neovim one by one. These are my top priorities:
+
+1. <a href='#autocomplete'>Autocomplete</a>
+2. <a href='#go-to-definition-and-references'> Go to definition and references </a>
+3. Search word/regex in the whole project
+4. Open file from path
+5. See git differences before a commit
+6. File explorer and terminal
+7. Toggle latest files
+8. Rename variable globally
+9. Format file on save
+
+Having all these functionalities, I do not think I need to open VScode anymore, while enjoying the Neovim benefits:
+
+- Amazing speed and performance
+- Extreme customizability
+- No need for mouse, hands always over the keyboard
+- Opportunity to better know my everyday tools
+- Better navigation between files and lines of code
+
+My plugins are install in 
+`/home/ro/.config/nvim/lua/plugins.lua`. You can find them 
+<a href='https://github.com/programandoconro/Programming-Locker/blob/master/OS/Linux/Dotfiles/nvim/lua/plugins.lua' target='_blank'> here. </a>
+
+## Autocomplete
+This includes auto-importing components, accessing inner properties of an object, knowing what is variables are inside a destructured object, auto-closing tags, and recommending already used words.
+
+For this I used `coc.vim` plugin from <a href='https://github.com/neoclide/coc.nvim' target="_blank"> here </a>
+
+## Go to definition and references
+This is the most important feature for me. I used to surf the project, allowing me to better understand what is happening. This is specially useful when the project is giant (millions lines of code).  
+
+Again, `coc.vim` does the trick. I use a `coc.lua`  file with the keybindings, check it <a href='https://github.com/programandoconro/Programming-Locker/blob/master/OS/Linux/Dotfiles/nvim/lua/coc.lua' target='_blank' style='color: white;'>here.</a>
+
+With these keybindings, I can use `\ gd` and `\ gr` to go to definition and reference respectively.
 
 
-If I have all this in VScode, why do I want to migrate? 
-
-Things I know I can have in Neovim:
-1. Amazing speed and performance
-2. Extreme customizability
-3. No need for mouse, hands always over the keyboard 
-4. Opportunity to better know my everyday tools
-5. Better navigation between files and lines of code 
- 
 </Post>

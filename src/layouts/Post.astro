@@ -10,20 +10,44 @@ const { title } = Astro.props as Props;
 ---
 
 <Layout title={ title }>
-    <button id="theme-button">
-      <img id="theme-png" alt="Theme image" src="/icons/dark-theme.png" width="50px" height="50px" />
-    </button>
-  <div class="post-layout">
-  <h1>{title}</h1>
-    <slot />
-  <Footer />
+    <div class='post-layout' >
+      <nav>
+        <a href="/">
+            <img id="main-page-button" alt="Page avatar image" src="/logos/programandoconro-no-bg.avif" width="40px" height="40px" />
+          </a>
+        <button id="theme-button">
+          <img id="theme-png" alt="Theme image" src="/icons/dark-theme.png" width="50px" height="50px" />
+        </button>
+
+      </nav>
+      <h1>{title}</h1>
+        <slot />
+      <Footer />
   </div>
 </Layout>
 
 <script>
   const layout = document.querySelector('.post-layout');
+
+  const localStorage = window.localStorage;
+  const theme = localStorage.getItem('theme') || 'dark';
+  if(theme === 'light') {
+    layout.classList.add('light-theme');
+  } 
+  else{
+    layout.classList.remove('light-theme');
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      link.style.color = 'white';
+      link.style.fontWeight = 'bold';
+    })
+  }
+
   const onClick = () => {
     layout.classList.toggle('light-theme');
+    const isLightTheme = layout.classList.contains('light-theme');
+    localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+
   }
   const button = document.getElementById('theme-button');
   button.addEventListener('click', onClick)
@@ -31,9 +55,9 @@ const { title } = Astro.props as Props;
 
 <style>
   .post-layout {
-    padding: 2rem;
+    padding: 0 2rem;
     font-family: "Montserrat", sans-serif;
-    transition: all .8s ease-in;
+    transition: background-color .1s ease-in;
     display: flex;
     flex-direction: column;
     min-height: 95vh;
@@ -44,24 +68,46 @@ const { title } = Astro.props as Props;
     background-color: var(--astro-white);
     color: var(--astro-black);
   }
-  .light-theme img {
+  .light-theme #theme-png {
     content: url('/icons/light-theme.png');
   }
 
   h1{
+    padding-top: 3rem;
     text-align: center;
   }
-  button {
-    top: 1rem;
+  #theme-button, #main-page-button {
+    top: 10px;
     position: absolute;
     border-radius: 50%;
-    right: 1rem;
-    background-color: var(--astro-blue);
     cursor: pointer ;
     border: none;
+    transition: box-shadow .3s ease-in-out;
+    width: 60px;
+    height: 60px;
+  }
+  #theme-button{
+    right: 0px;
+    background-color: var(--astro-blue);
 
+  }
 
+  #main-page-button {
+    left: 0px;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
 
+  }
+  .light-theme #main-page-button {
+    box-shadow: none;
+    background-color: var(--astro-blue);
+  }
+
+  #main-page-button:hover, #theme-button:hover{
+    box-shadow: 6px 6px 6px 1px rgb(0 0 0 / 30%);
+
+  }
+  nav{
+    position: relative ;
   }
 
 
