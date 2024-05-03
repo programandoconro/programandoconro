@@ -8,43 +8,186 @@ This is a step I have trying for years, ending up depressed at VScode. I have be
 
 Of course I am using vim extension in VScode, but it is not enough for me. There are a lot of functionalities I have no access to, or have limitations.
 
-But this will be no easy task, these are the requirements for a good code editor in my opinion:
+But this will be no easy task, these are the requirements for a good code editor in my opinion. If Neovim can do everything I do with VScode, I know things will only get better in the future, while I find more amazing flexibility and functionality.
 
 There are a lot things in VScode that I cannot live without. I will find a similar/better approach in Neovim one by one. These are my top priorities:
 
-1. <a href='#autocomplete'>Autocomplete</a>
-2. <a href='#go-to-definition-and-references'> Go to definition and references </a>
-3. Search word/regex in the whole project
-4. Open file from path
-5. See git differences before a commit
-6. File explorer and terminal
-7. Toggle latest files
-8. Rename variable globally
-9. Format file on save
+1. <a href="#autocomplete">Autocomplete</a>
+
+2. <a href="#go-to-definition-and-references">
+     Go to definition and references
+   </a>
+
+3. <a href="#search-for-matching-words">Search for matching words</a>
+
+4. <a href="#search-a-file-by-name">Search a file by name</a>
+
+5. <a href="git-differences-before-commit">Git differences before commit</a>
+
+6. <a href="#file-explorer">File explorer</a>
+   <br />
+   <br />
+7. <a href="#terminal">Terminal</a>
+
+8. <a href="#toggle-latest-files">Toggle latest files</a>
+
+9. <a href="#rename-variables-globally"> Rename variables globally </a>
+   <br />
+   <br />
+10. <a href="#format-file-on-save"> Format file on save </a>
+
+11. <a href="#update-imports-when-renaming-a-file">
+      Update imports when renaming a file
+    </a>
 
 Having all these functionalities, I do not think I need to open VScode anymore, while enjoying the Neovim benefits:
 
 - Amazing speed and performance
 - Extreme customizability
 - No need for mouse, hands always over the keyboard
+  Using Nvim will allow me to rely more on Vim keybindings. This will make me learn them better and be more productive. No distractions, everything at the tip of my fingers.
+
 - Opportunity to better know my everyday tools
 - Better navigation between files and lines of code
+- Rely more in system tools than in my IDE.
+  VScode is very powerful, and its tools are amazing. But your system capabilities are even better, almost infinite. Meaning that you can have improved/new functionalities for the things you love about VScode.
 
-My plugins are install in 
-`/home/ro/.config/nvim/lua/plugins.lua`. You can find them 
-<a href='https://github.com/programandoconro/Programming-Locker/blob/master/OS/Linux/Dotfiles/nvim/lua/plugins.lua' target='_blank'> here. </a>
+My plugins are install in
+`/home/ro/.config/nvim/lua/plugins.lua`. You can find them<a
+href="https://github.com/programandoconro/Programming-Locker/blob/master/OS/Linux/Dotfiles/nvim/lua/plugins.lua"
+target="_blank"> here</a>
 
 ## Autocomplete
+
 This includes auto-importing components, accessing inner properties of an object, knowing what is variables are inside a destructured object, auto-closing tags, and recommending already used words.
 
 For this I used `coc.vim` plugin from <a href='https://github.com/neoclide/coc.nvim' target="_blank"> here </a>
 
 ## Go to definition and references
-This is the most important feature for me. I used to surf the project, allowing me to better understand what is happening. This is specially useful when the project is giant (millions lines of code).  
 
-Again, `coc.vim` does the trick. I use a `coc.lua`  file with the keybindings, check it <a href='https://github.com/programandoconro/Programming-Locker/blob/master/OS/Linux/Dotfiles/nvim/lua/coc.lua' target='_blank' style='color: white;'>here.</a>
+This is the most important feature for me. I used to surf the project, allowing me to better understand what is happening. This is specially useful when the project is giant (millions lines of code).
+
+Again, `coc.vim` does the trick. I use a `coc.lua` file with the keybindings, check it <a href='https://github.com/programandoconro/Programming-Locker/blob/master/OS/Linux/Dotfiles/nvim/lua/coc.lua' target='_blank'>here.</a>
 
 With these keybindings, I can use `\ gd` and `\ gr` to go to definition and reference respectively.
 
+## Search for matching words
 
+Many times in a large repository, you need to find an expression or words near the place you will code. This helps to quickly find the place where you need to be. For this, you can use `command/control + shift + f` in VScode, I definitively used it all the time instead of searching in the file explorer.
+
+Thankfully, there is an amazing `fzf` <a href="https://github.com/junegunn/fzf.vim" target="_blank">fuzzy finder plugin</a> to help us achieve this same thing, faster and with extra functionalities.
+It feels more powerful that the one in VScode, using the whole screen.
+
+I used this keybinding `\fc`:
+
+```
+map("n", "<leader>fc", ":Rg<cr>") --search word everywhere
+```
+
+## Search a file by name
+
+Many times we know the path of the file we want to open and we want to access it as quickly as possible. Of course, we could open a new terminal and go the file manually, but we should have a keybinding to make it smoother. Again, `fzf` library comes to the rescue.
+
+In our `remaps.lua` file
+
+```
+map("n", "mm", ":Files<cr>") --search file by name in the whole system
+```
+
+And in our `plugins.lua` file
+
+```
+function search_word_all()
+    local input_string = vim.fn.input("Search For > ")
+        if (input_string == '') then
+          return
+        end
+        builtin.grep_string({
+          search = input_string,
+    })
+end
+vim.keymap.set('n', '<leader>fa', search_word_all, {})
+```
+
+## Format file on save
+
+I installed Prettier using `:CocInstall coc-prettier` in vim's EXECUTE mode. Then I added a keybinding to format and save the file when I use `zz` in COMMAND mode.
+
+```
+map("n", "zz", ":Prettier<cr> <ESC>:update<cr>")
+```
+
+You can use formatters different than Prettier, depending on your programming language target. Or assign a different keybinding to formatting file only.
+
+```
+map("n", "ff", ":Prettier<cr>")
+```
+
+## File explorer
+
+I started using `NerdTree`, but then I read that for Neovim, `NvimTree` is more convenient since it is written in Lua.
+I gave it a try and I totally felt in love. It is faster than `NerdTree` and the keybindings are awesome.
+
+You can find it <a href="https://github.com/nvim-tree/nvim-tree.lua?tab=readme-ov-file"> here </a>.
+This how it looks like and the default keybindings:
+
+<span>
+  <img
+    src="https://user-images.githubusercontent.com/1505378/232662694-8dc494e0-24da-497a-8541-29344293378c.png"
+    width="300px"
+    alt="NvimTree photo"
+  />
+  <img
+    src="https://user-images.githubusercontent.com/1505378/232662698-2f321315-c67a-486b-85d8-8c391de52392.png"
+    width="300px"
+    alt="NvimTree photo"
+  />
+</span>
+
+## Terminal
+
+Being able to quickly toggle terminals while coding is a fundamental functionality in my opinion. I want to be able to create multiple terminals for different tasks, for example, running dev servers, executing tests and writing git commands. I do not want them to be open all the time, but to have rapid access to them when needed.
+
+I found <a href="https://github.com/akinsho/toggleterm.nvim" target="\_blank"> this </a> amazing plugin to achieve just that.
+I use `tt` to toggle terminal, and `{number}tt` to create a new one. I do not like that I have to use `Ctrl\ Ctrl n` to exit insert mode in the terminal and be able to toggle it close, but I it is possible to remap it with:
+
+```
+map("t", "jk", "<C-\\><C-n>") -- exit terminal mode
+```
+
+<img
+  src="https://user-images.githubusercontent.com/22454918/224485816-8b0cb1b8-b0e6-4da6-9d71-a7299d39f1a0.gif"
+  alt="Terminal plugin"
+/>
+
+## Toggle recent files
+
+This is probably my favorite advantage of using Neovim, and the one that made me try the full migration. In VScode I use `Ctrl Tab` to show the latest files I worked on. It does the job but sometimes I found it buggy, not adding files that I visited recently. This is very important for me when working in a large repository, I do not want to search the file again in the file explorer.
+
+So I use <a href="https://github.com/smartpde/telescope-recent-files" target="_blank" > this </a> plugin in Neovim, and completely love it.
+It opens `telescope` with all the files you worked on recently. So I can access them as fast as thunder.
+
+I also learned recently that you can toggle the last file you worked on with `Ctrl ^`, and I remapped it to `Ctrl s` since I use it all the time now.
+
+Additionally, I am trying to use `Ctrl o` and `Ctrl i` more, so I can go to recent lines of code across different files I am working on.
+
+This navigation between recent places makes the Neovim experience to be captivating in my opinion.
+
+## Rename variables globally
+
+This is a very convenient functionality when you want to refactor your code and give more context to your variables names. In VScode I use it all the time, specially when I know the variable is used in many places along the project and I do not want to change manually each one. For Neovim, I found <a href="https://github.com/smjonas/inc-rename.nvim" target="\_blank"> amazing plugin </a>.
+
+You need to install it and add this key mapping to you configuration:
+
+```
+vim.keymap.set("n", "<leader>rn", function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })
+```
+
+Then, you can use `\rn` over the selected variable. It works as a charm.
+
+<video controls="" autoplay="" name="media">
+
+<source src="https://private-user-images.githubusercontent.com/40792180/197186202-d848ba0c-7d3b-4e01-8e99-36ad7d884308.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ5MTQ2ODksIm5iZiI6MTcxNDkxNDM4OSwicGF0aCI6Ii80MDc5MjE4MC8xOTcxODYyMDItZDg0OGJhMGMtN2QzYi00ZTAxLThlOTktMzZhZDdkODg0MzA4Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTA1VDEzMDYyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM3ZjIwOWQwZDRjNDA1Mjg5NGQ1MjJiODkzMTQ5MzZkN2RmMjZmMjY0MDBiYWVlNWI0NDNkNWU3OGYwOGQ4NzQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.JM0WMTSn1kUSF4mFQ7PWiNOrBKrQJjGLBsZkFweXFq0" type="video/mp4"/></video>
 </Post>
