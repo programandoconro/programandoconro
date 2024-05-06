@@ -1,5 +1,6 @@
 import Avatar from "../../../components/Avatar.astro";
 import Post from "../../../layouts/Post.astro";
+import Link from "../../../components/Link.astro";
 export const title = "Migrating to Neovim from VScode";
 
 <Post title={title}>
@@ -22,12 +23,15 @@ There are a lot things in VScode that I cannot live without. I will find a simil
 
 4. <a href="#search-a-file-by-name">Search a file by name</a>
 
-5. <a href="git-differences-before-commit">Git differences before commit</a>
+5. <a href="#terminal">Terminal</a>
 
 6. <a href="#file-explorer">File explorer</a>
    <br />
    <br />
-7. <a href="#terminal">Terminal</a>
+
+7. <a href="#git-differences-and-conflict-resolving">
+     Git differences and conflict resolving
+   </a>
 
 8. <a href="#toggle-latest-files">Toggle latest files</a>
 
@@ -61,7 +65,7 @@ target="_blank"> here</a>
 
 This includes auto-importing components, accessing inner properties of an object, knowing what is variables are inside a destructured object, auto-closing tags, and recommending already used words.
 
-For this I used `coc.vim` plugin from <a href='https://github.com/neoclide/coc.nvim' target="_blank"> here </a>
+For this I used `coc.vim` plugin from <Link href='https://github.com/neoclide/coc.nvim'> here </Link>
 
 ## Go to definition and references
 
@@ -121,6 +125,38 @@ You can use formatters different than Prettier, depending on your programming la
 
 ```
 map("n", "ff", ":Prettier<cr>")
+```
+
+## Git differences and conflict resolving
+
+For this, I am planning to use <Link href="https://github.com/jesseduffield/lazygit"> this program </Link> named `lazygit`. You need to install it depending your OS, it is a breeze. Then I can easily open it from Neovim using terminal explained in this <Link href="#terminal">step.</Link>. I can open a floating terminal with `lazygit` using this remap:
+
+```
+-- TERMINAL LAZYGIT
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({
+  cmd = "lazygit",
+  dir = "git_dir",
+  direction = "float",
+  float_opts = {
+    border = "double",
+  },
+  -- function to run on opening the terminal
+  on_open = function(term)
+    vim.cmd("startinsert!")
+    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", {noremap = true, silent = true})
+  end,
+  -- function to run on closing the terminal
+  on_close = function(term)
+    vim.cmd("startinsert!")
+  end,
+})
+
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 ```
 
 ## File explorer
