@@ -2,8 +2,9 @@ import Avatar from "../../../components/Avatar.astro";
 import Post from "../../../layouts/Post.astro";
 import Link from "../../../components/Link.astro";
 export const title = "Migrating to Neovim from VScode";
+export const date = new Date('2024/05/12').toDateString();
 
-<Post title={title}>
+<Post title={title} date={date}>
 
 This is a step I have trying for years, ending up depressed at VScode. I have been putting the pieces together, and now, I think I am ready to fly around files and lines of code, as a Neovim Ninja.
 
@@ -14,35 +15,17 @@ But this will be no easy task, these are the requirements for a good code editor
 There are a lot things in VScode that I cannot live without. I will find a similar/better approach in Neovim one by one. These are my top priorities:
 
 1. <a href="#autocomplete">Autocomplete</a>
-
-2. <a href="#go-to-definition-and-references">
-     Go to definition and references
-   </a>
-
+2. <a href="#go-to-definition-and-references"> Go to definition and references </a>
 3. <a href="#search-for-matching-words">Search for matching words</a>
-
 4. <a href="#search-a-file-by-name">Search a file by name</a>
-
 5. <a href="#terminal">Terminal</a>
-
 6. <a href="#file-explorer">File explorer</a>
-   <br />
-   <br />
-
-7. <a href="#git-differences-and-conflict-resolving">
-     Git differences and conflict resolving
-   </a>
-
+7. <a href="#git-differences-and-conflict-resolving"> Git differences and conflict resolving</a>
 8. <a href="#toggle-latest-files">Toggle latest files</a>
-
-9. <a href="#rename-variables-globally"> Rename variables globally </a>
-   <br />
-   <br />
-10. <a href="#format-file-on-save"> Format file on save </a>
-
-11. <a href="#update-imports-when-renaming-a-file">
-      Update imports when renaming a file
-    </a>
+9. <a href="#rename-variables-globally">Rename variables globally</a>
+10. <a href="#format-file-on-save">Format file on save</a>
+11. <a href="#update-imports-when-renaming-a-file"> Update imports when renaming a file </a>
+12. <a href="#see-inferred-type-and-type-error"> See inferred type and type error</a>
 
 Having all these functionalities, I do not think I need to open VScode anymore, while enjoying the Neovim benefits:
 
@@ -129,7 +112,7 @@ map("n", "ff", ":Prettier<cr>")
 
 ## Git differences and conflict resolving
 
-For this, I am planning to use <Link href="https://github.com/jesseduffield/lazygit"> this program </Link> named `lazygit`. You need to install it depending your OS, it is a breeze. Then I can easily open it from Neovim using terminal explained in this <Link href="#terminal">step.</Link>. I can open a floating terminal with `lazygit` using this remap:
+For this, I am planning to use <Link href="https://github.com/jesseduffield/lazygit"> this program </Link> named `lazygit`. You need to install it depending your OS, it is a breeze. Then I can easily open it from Neovim using terminal explained in this <Link href="#terminal">step.</Link>. I can open a floating terminal with `lazygit` using this remap `\g`:
 
 ```
 -- TERMINAL LAZYGIT
@@ -191,12 +174,15 @@ I use `tt` to toggle terminal, and `{number}tt` to create a new one. I do not li
 map("t", "jk", "<C-\\><C-n>") -- exit terminal mode
 ```
 
+I used this for a while, but then decided that it was better to learn/use `tmux`. I was a very easy transition and now I can control Neovim and more window/pane from the terminal itself. So, instead of letting Neovim control terminals, I let my terminal control Neovim + new windows/panes.
+
+
 <img
   src="https://user-images.githubusercontent.com/22454918/224485816-8b0cb1b8-b0e6-4da6-9d71-a7299d39f1a0.gif"
   alt="Terminal plugin"
 />
 
-## Toggle recent files
+## Toggle latest files
 
 This is probably my favorite advantage of using Neovim, and the one that made me try the full migration. In VScode I use `Ctrl Tab` to show the latest files I worked on. It does the job but sometimes I found it buggy, not adding files that I visited recently. This is very important for me when working in a large repository, I do not want to search the file again in the file explorer.
 
@@ -205,9 +191,11 @@ It opens `telescope` with all the files you worked on recently. So I can access 
 
 I also learned recently that you can toggle the last file you worked on with `Ctrl ^`, and I remapped it to `Ctrl s` since I use it all the time now.
 
-Additionally, I am trying to use `Ctrl o` and `Ctrl i` more, so I can go to recent lines of code across different files I am working on.
+Additionally, I am trying to use `Ctrl o` and `Ctrl i` more, so I can go to recent lines of code across different files I am working on. But this is not very good when jumping around a lot in the same file, because it navigates to your previous locations.
 
 This navigation between recent places makes the Neovim experience to be captivating in my opinion.
+
+Currently I am trying the plugin `Harpoon` of the famous Primeagen youtuber, it promise a lot to be the thing I am looking for; an easy way to toggle the latest files I am working when doing a specific task at my job. 
 
 ## Rename variables globally
 
@@ -223,7 +211,32 @@ end, { expr = true })
 
 Then, you can use `\rn` over the selected variable. It works as a charm.
 
-<video controls="" autoplay="" name="media">
 
-<source src="https://private-user-images.githubusercontent.com/40792180/197186202-d848ba0c-7d3b-4e01-8e99-36ad7d884308.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ5MTQ2ODksIm5iZiI6MTcxNDkxNDM4OSwicGF0aCI6Ii80MDc5MjE4MC8xOTcxODYyMDItZDg0OGJhMGMtN2QzYi00ZTAxLThlOTktMzZhZDdkODg0MzA4Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTA1VDEzMDYyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM3ZjIwOWQwZDRjNDA1Mjg5NGQ1MjJiODkzMTQ5MzZkN2RmMjZmMjY0MDBiYWVlNWI0NDNkNWU3OGYwOGQ4NzQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.JM0WMTSn1kUSF4mFQ7PWiNOrBKrQJjGLBsZkFweXFq0" type="video/mp4"/></video>
+## See inferred type and type error
+
+After installing `coc.vim` I could see type errors when making one. To see the inferred type, you just need to use `Shift k` over the target variable and that is it.
+
+In VScode, I also have a plugin that shows me an 'easy' type error explanation. Can I have something similar in Neovim?
+
+## Update imports when renaming a file
+
+I am having troubles with this one. I do not do this often, but I do not want to open VScode when I need to rename a file and update the imported places.
+I tried many approaches to solve this but nothing was working, what made try some other people configuration. Then, I used this amazing <Link href="https://github.com/craftzdog/dotfiles-public/tree/master/.config/nvim"> Tayuka san's dotfiles</Link>. There, all my problems were solved, and I had so many awesome new features. But, I felt it was too fancy for me, too many effects and unwanted functionalities. Besides that, Tayuka san opened a new door for me "I could try many people configuration and find a good match for me!!!"
+
+## Conclusions after 2 weeks trying to make my Nvim configuration better than VScode
+
+The process was more fun and more tedious than I expected. But I feel so much productive, fast and ergonomic than before. I have so much power in my hands now!! 
+
+I am learning a lot about `lua` and Neovim. Also, I found so many new functionalities that I did not know were so useful. You can check the plugins I have installed and you will see that now I expect more from my editor than I did when starting this post.  
+
+After realising that there was a `lazy` plugging installer and that I could use another's people configuration so easily, I researched online and found <Link href="https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim"> josean-dev's </Link> wonderful configuration.
+This solved basically all my listed problems, then I found that I needed a few more things, as inline git blame, spell checker for English and Spanish,  
+
+These post let me understand that a nvim configuration is something dynamic, and that rather than having one configuration, I will be learning and tweaking it constantly.
+
+This is my current configuration, but as I said before, it will evolve with time definitively. 
+
+<Link href="https://github.com/programandoconro/Programming-Locker/tree/master/Dotfiles/nvim"> My configuration </Link>
+
+I plan to write a new post after a month working with Neovim as my day to day text editor. I am much in a hype right now!! 
 </Post>

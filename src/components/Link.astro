@@ -1,11 +1,11 @@
 ---
 export interface Props {
   href: string
-  newTab?: boolean
+  target: string
 }
 
-const {href, newTab} = Astro.props as Props;
+const {href, target='_blank'} = Astro.props as Props;
 ---
-<a href={href} target= {newTab ? "_blank" : "_self"}>
+<a href={href} target= {target}>
   <slot />
 </a>
