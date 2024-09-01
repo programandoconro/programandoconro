@@ -1,0 +1,247 @@
+import Post from "../../../layouts/Post.astro";
+import Link from "../../../components/Link.astro";
+
+export const title = "Mi configuración Linux para programación";
+export const date = new Date('2024/09/01').toLocaleDateString('es-ES', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+
+<Post title={title} date={date}>
+<h2> Introducción </h2>
+<section>
+  Hace 10 años hice mi primera instalación Linux, sistema operativo que me recomendaron en mi clase de Estadística Avanzada con R en el postgrado de Ecología. Me enamoré de la variedad de distribuciones y sus enigmáticos nombres. Ubuntu, Fedora y Debian, fueron los primeros que escuché. Pero pronto vendrían Mint, Manjaro y hasta Arch.
+  Dentro de Linux, conocí a la terminal, a Vim y a Tmux, herramientas que marcaron mi desarrollo profesional y mi productividad. He programado con Python, Javascript, Java, Kotlin, Typescript, Go, Rust, entre otros lenguajes. Me especialicé en React, aunque guardo mucho cariño al desarrollo Android, IoT y Arduino.
+  En la actualidad, soy desarrollador front-end en Rakuten, Japón, y estudio Rust en mi tiempo libre.
+  
+</section>
+
+  Escribo este post para compartir el proceso de configuración del sistema operativo en mi recientemente adquirida Thinkpad T480.
+  Vayamos al punto que vamos a conversar:
+<ol>
+  <li><a href="#escoger-la-distribución">Escoger la distribución</a></li>
+  <li><a href="#administrador-de-ventanas">Administrador de ventanas</a></li>
+  <li><a href="#aplicaciones">Aplicaciones</a></li>
+  <li><a href="#configuración-de-herramientas">Configuración de herramientas</a></li>
+  <li><a href="#ides">IDEs</a></li>
+  <li><a href="#lenguajes-de-programacion">Lenguajes de programación</a></li>
+</ol>
+
+## Escoger la distribución
+  Yo comencé con Ubuntu 16 en 2013, así que en la actualidad, sigo recomendando Ubuntu como el punto de entrada a Linux. Es el más usado, por lo que la información online es abundante.
+  Para ciencia de datos y estadística, recomiendo Debian. Es el hermano mayor de Ubuntu y tiene buen soporte para hacer minería de datos con GPU.
+  Sin embargo, estas últimas distros suelen actualizar sus paquetes con menor regularidad, por lo que no son "bleeding-edge". Si quieres tener las versiones más recientes de tus programas a utilizar y seguir siendo muy estable, Fedora es una fantástica candidata. No es tan fácil de usar como los derivativos de Debian(Ubuntu, Mint, Lubuntu, etc...), principalmente porque los programas <code>.dev</code> son más abundantes que <code>.rpm </code>. 
+  Si quieres vivir en la punta de la actualidad, nada mejor que Arch. Pero solo es recomendable para usuarios avanzados, porque su configuración es complicada. Yo logré instalar Arch con la ayuda de <code>scripts</code> preparados por usuarios avanzados.
+  En mi opinión, la distribución con lo mejor de todos los mundos es Manjaro. Tiene acceso a los repositorios de Arch, usando <code>pacman</code> como su instalador de paquetes, es fácil de instalar y muy estable.
+
+  Después de años usando Manjaro, quiero volver a Fedora y utilizarla de ejemplo en este post.
+  Me encanta como Fedora funciona luego de la instalación, sobre todo su soporte de idiomas. La estabilidad y actualización de paquetes suman a la decisión. Pero no prometo no volver a mi configuración con Manjaro.
+
+<center>
+  <img width='50%' alt='Fedora distribution' src='/images/fedora-1.webp'/>
+</center>
+
+  Para instalar Fedora, simplemente ve a <Link href='https://fedoraproject.org/'> https://fedoraproject.org/</Link> y descarga la imagen <code>.iso</code>. Luego quema la imagen en una memoria USB utilizando <Link href='https://etcher.balena.io/'> Balena etcher </Link> u otra aplicación parecida. Entra al menu boot de tu computadora y cambia el orden de dispositivos para el arranque. Más detalles en este <Link href='https://programandoconro.wordpress.com/tutoriales/'>tutorial previo</Link>.
+
+
+Luego de la instalación, no olvide actualizar el sistema con
+<code>
+sudo yum update -y
+ </code>
+
+ ## Administrador de ventanas
+ Usualmente, los sistemas operativos vienen con un administrador de ventanas tipo <code> stack </code>, donde las ventanas abiertas son apiladas una sobre otra, en diferentes sitios de la pantalla. Lo que requiere que el usuario las ajuste y mueva cada vez. Esto puede ser muy engorroso, sobre todo cuando hay muchas ventanas abiertas. 
+
+ Debido a lo anterior, existe un gestor de ventanas llamado <code> tiling </code> en inglés, que dispone las ventanas en mosaico en vez de apilarlas. Esto permite organizar automática y lógicamente nuestras ventanas para que no se estorben. Además de darnos la capacidad de reorganizarlas utilizando atajos de teclado.
+
+ Existen varios de estos gestores, de los cuales, el más sencillo de usar es <code> i3 </code>. Manjaro viene con una versión que incluye i3 como su gestor predeterminado.
+  `i3` es un gestor orientado la productividad, por lo que se enfoca en que utilicemos en teclado en vez del mouse. De esta forma, nuestras manos están siempre en el teclado y la navegación entre aplicaciones se hace muy fácil. 
+  En nuestro caso, vamos a instalar `i3` en Fedora adicionalmente con el predeterminado Gnome, permitiéndonos alternar de gestor a nuestro gusto. 
+ Para instalarlo, ejecuta:
+ <code>
+    sudo dnf install i3 i3status dmenu i3lock xbacklight feh conky
+    sudo dnf copr enable fuhrmann/i3-gaps
+    sudo dnf install i3-gaps
+    sudo dnf install xss-lock picom network-manager-applet light maim xclip dunst polkit-gnome polybar rofi
+ </code>
+
+ Luego hacemos log out y luego de seleccionar el usuario, podremos ver un icono en la esquina inferior izquierda con los diferentes gestores. Escogemos i3 y llegaremos a la enigmática primera vista del maravilloso i3, donde bummer alguno podría abrir el navegador. No se puede clickear en nada, no hay menus ni iconos. Pero es rápido como la centella y ligero como una pluma.
+
+
+<center>
+   <img width='80%' src='/images/i3-1.png' alt='i3 window manager' />
+</center>
+
+ Para abrir la terminal, presiona <code> Super + Enter </code>. La configuración de i3, que nos permitirá customizar los atajos del teclado para acceder a nuestras aplicaciones y cambiar el layout de las ventanas, se encuentra en <code>~/.config/i3/config</code>
+Tómate tu tiempo para entender como funcional la configuración. Por default, `Super` es tu 'Mod', la tecla que empieza la combinación del combo que permitirá ejecutar la tarea que desees. Por ejemplo, abrir la terminal:
+```
+bindsym $mod+Return exec alacritty
+```
+Significa que `Super + Enter` abrirá la aplicación Alacritty. 
+
+También puedes configurar un segundo "Mod" adicional para que sea `Alt`.
+```
+set $var Mod1
+```
+Y ahora, `bindsym $var+i exec firefox` , que traducirá a que `Alt + i` abrirá Firefox. 
+
+Échale un ojo a mi <Link href='https://github.com/programandoconro/Programming-Locker/blob/master/OS/Linux/i3/config'>configuración.</Link>
+
+## Aplicaciones
+Primero que nada, necesitamos un buen navegador para investigar en la red. El mejor, Brave, ya bloquea las publicidades en todas las páginas, apreciadamente las de Youtube también. Permite una customización de modo nocturno que me encanta. Básicamente, es un Chrome mejorado y sin publicidades.
+
+
+  ```
+sudo dnf install dnf-plugins-core
+sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+sudo dnf install brave-browser
+```
+<center>
+  <img width='25%' alt='Brave browser' src='/images/brave-1.jpg'/>
+</center>
+
+Para hacer desarrollo web, necesitamos Chrome porque es el navegador más popular.
+
+```
+sudo dnf install fedora-workstation-repositories
+sudo dnf config-manager --set-enabled google-chrome
+sudo dnf install google-chrome-stable
+```
+<strong>Docker</strong>: Afortunadamente, Fedora 40 incluye `podman` por defecto, programa muy parecido a Docker y con virtualmente los mismos comandos. De esta forma podremos crear contenedores virtuales para nuestras aplicaciones.
+
+
+<strong>Netcat</strong>: Cuando trabajo con IoT, me interesa hallar los dispositivos conectados a mir red, por lo cuál, `netcat` es muy cómodo.
+
+<strong>Clipit</strong>: También necesito una aplicación que guarde mis textos copiados en el clipboard. Para eso Clipit funciona muy bien.
+
+
+
+
+ ## Configuración de herramientas 
+ Neovim: Primero que nada necesitas un editor de texto decente, y nada mejor que Vim/Neovim. Lo puedes instalar con 
+  <code> sudo yum install neovim </code>
+  Si quieres usar Neovim como vitaminas, tengo un <Link href='https://www.programandoconro.com/blog/posts/migrate_to_nvim_from_vscode'>post </Link> al respecto. Revisa mi <Link href='https://github.com/programandoconro/Programming-Locker/tree/master/Dotfiles/nvim'>configuración</Link>. Simplemente, pon esos archivos en `~/.config/nvim` y abre nvim.
+
+<center>
+  <img width='25%' alt='Neovim' src='/images/nvim-1.png'/>
+</center>
+
+
+
+  Tmux: Te recomiendo usar <code> tmux </code> para administrar ventanas de terminal. Permite gestionar múltiples sesiones permanentes y navegar entre ellas muy fácilmente. Mi archivo de configuración es <Link href='https://github.com/programandoconro/Programming-Locker/blob/master/Dotfiles/tmux.conf'> este </Link>.
+
+  Zsh: Para trabajar en una terminal de lujo, existe el famoso `oh-my-zsh`, se instala con:
+  ```
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  ```
+<center>
+   <img width='80%' src='/images/omz-1.png' alt='zsh plugin' />
+</center>
+  También vamos a agregar sugerencias automáticas para facilitar la escritura de comandos. Para eso, utilizamos un plugin de zsh llamado `autosuggestions`. Instalamos con:
+
+  ```
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+Y lo agregamos a lista de plugins en el archivo de configuración `~/.zshrc`.
+
+```
+plugins=( 
+    # other plugins...
+    zsh-autosuggestions
+)
+```
+Luego hacemos `source ~/.zshrc` y ya debería funcionar para sugerirnos el comando que queremos ejecutar. Básicamente, lo que hace es "memorizar" los comandos anteriores y sugerirlos basados en los caracteres que vayamos escribiendo.
+
+<strong> z jumper </strong>
+`z` permite navegar fácilmente sin recordar el directorio específico al que queremos ir. Por ejemplo, si yo antes navegué a `/home/ro/my-projects/test` y ahora me encuentro en otro directorio, puedo simplemente usar `z test` y erá al directorio objetivo. 
+
+```
+wget https://raw.githubusercontent.com/rupa/z/master/z.sh
+
+sudo mv z.sh /usr/local/bin/z.sh
+echo ". /usr/local/bin/z.sh" >> ~/.zshrc
+source ~/.zshrc
+```
+## IDEs
+
+Visual Studio Code: Ya tenemos el poderoso Nvim, y debería ser más que suficiente para la mayoría de nuestros proyectos. Pero a veces, es bueno tener algo más genérico, menos customizable, pero a la vez sumamente popular. Este es VS Code, lo instalamos yendo a la página y descargando el archivo `.rpm`. En gnome podemos dar doble click al archivo y en `i3` podemos ejecutar `sudo yum install #PathAlArchivo`. 
+
+VsCode ofrece un buen grado de customización, pero lo más importante, un gran ecosistema de plugins. Esto nos va a permitir empezar a programar de manera muy rápida. 
+
+Yo utilizo muchos plugins, pero mis favoritos son:
+<ol>
+  <li> Vim (emulador de atajos de vim)</li>
+  <li> Prettier</li>
+  <li> rust-analyzer</li>
+  <li>  Astro</li>
+  <li>  GitLens</li>
+  <li>  EsLint</li>
+  <li>  Code Spell checker </li>
+</ol>
+
+Con VSCode podemos programar en virtualmente todos los lenguajes de programación, sin embargo, hay unas IDEs que son idóneas para determinados lenguajes o plataformas.
+
+<center>
+   <img width='25%' src='/images/vscode-1.png' alt='zsh plugin' />
+</center>
+
+
+Opcionales:
+
+Android Studio Para trabajar con Kotlin y Java en aplicaciones Android, instalamos <Link href='https://www.jetbrains.com/idea/'>Android studio</Link>. TODO: Agregar instrucciones
+
+Arduino Studio: A veces, me gusta jugar con microcontroladores Arduino y ESP32. Por eso, necesito instalar Arduino Studio.TODO: Agregar instrucciones
+
+## Lenguajes de programación
+Maravillosamente, `Python(3.12.5)` y `Javascript(Node v20)` ya vienen instalados en Fedora 40, así que un paso menos. También podemos escribir scripts `Bash` sin instalaciones adicionales.
+
+<strong> Typescript con Bun </strong>
+Pero, en vez de Node, me gusta trabajar con Bun, porque soporta Typescript por defecto, es más rápido y seguro. Es un Node mejorado.  
+Se instala facilito con:
+```
+curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
+mkdir hello-world && cd hello-world
+bun init hello-world
+bun run index.ts
+// Hello via Bun!
+```
+<center>
+  <img width='50%' alt='Bun framework' src='/images/bun-1.png'/>
+</center>
+
+<strong>Go</strong>
+Ya se me olvidó Go, pero nunca está de más.
+```
+wget https://go.dev/dl/go1.23.0.src.tar.gz
+rm -rf /usr/local/go # en caso de que haya otra versión
+tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+go version 
+# go version go1.23.0 linux/amd64
+```
+
+Planeo seguir procrastinando mi camino de aprendizaje de Rust
+
+<strong>Rust</strong>: 
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo init hello-world
+cargo run
+# Hello, world!
+
+```
+
+<center>
+   <img width='25%' src='/images/rust-1.png' alt='Rust language' />
+</center>
+
+## Conclusiones
+
+Esta no es una guía definitiva ni mucho menos, está plagada de sesgos y preferencias, obviamente. Pienso estarla actualizando por un tiempo con otras configuraciones. 
+
+Ojalá te haya motivado para intentar algunas de las tecnologías mencionadas, así como para inspirarte en la configuración personalizada de tu sistema. Espero te haya gustado y hasta una nueva lectura. Saludos.
+
+</Post> 

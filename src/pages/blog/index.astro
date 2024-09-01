@@ -1,23 +1,27 @@
 ---
-import Post from '../../layouts/Post.astro'
+import Post from "../../layouts/Post.astro";
 ---
 
-<Post title='My Posts'>
-<ul>
-  <li id="list-of-posts">
-    <a href='/blog/posts/migrate_to_nvim_from_vscode'> Migrate to Neovim from VScode</a>
-  </li>
-<script>
-
-</script>
-
-</ul>
+<Post title="My Posts" date="">
+  <ul>
+    <li id="list-of-posts">
+      <a href="/blog/posts/migrate_to_nvim_from_vscode">
+        Migrate to Neovim from VScode</a
+      >
+    </li>
+    <br />
+    <li id="list-of-posts">
+      <a href="/blog/posts/mi_configuracion_linux_para_programacion">
+        Mi configuración Linux para programación</a
+      >
+    </li>
+    <script></script>
+  </ul>
 </Post>
 
 <style>
-  a{
+  a {
     font-size: larger;
     color: inherit;
   }
-
 </style>
